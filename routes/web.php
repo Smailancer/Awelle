@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\WordController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\AdminWordController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [WordController::class, 'index'])->name('home');
+
+
+Route::get('words/{word:slug}', [WordController::class, 'show']);
+// Route::word('words/{word:slug}/comments', [CommentController::class, 'store']);
+
+// Admin Section
+Route::middleware('can:admin')->group(function () {
+    Route::resource('admin/words', AdminWordController::class)->except('show');
 });
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
