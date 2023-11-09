@@ -27,7 +27,7 @@ Route::middleware('can:admin')->group(function () {
     Route::resource('admin/words', AdminWordController::class)->except('show');
 });
 
-
+ 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

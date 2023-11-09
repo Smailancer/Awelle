@@ -2,30 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorewordRequest;
-use App\Http\Requests\UpdatewordRequest;
-use App\Models\word;
+use App\Models\Wilaya;
+use Illuminate\Http\Request;
 
-class WordController extends Controller
+class WilayaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-
     public function index()
     {
-        return view('words.index', [
-            'words' => Word::latest()->filter(
-                        request(['search', 'slang', 'author'])
-                    )->paginate(9)->withQueryString()
-        ]);
-    }
-
-    public function show(Word $word)
-    {
-        return view('words.show', [
-            'word' => $word
-        ]);
+        //
     }
 
     /**
@@ -39,7 +26,7 @@ class WordController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorewordRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -47,11 +34,15 @@ class WordController extends Controller
     /**
      * Display the specified resource.
      */
+    public function show(Wilaya $wilaya)
+    {
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(word $word)
+    public function edit(Wilaya $wilaya)
     {
         //
     }
@@ -59,7 +50,7 @@ class WordController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatewordRequest $request, word $word)
+    public function update(Request $request, Wilaya $wilaya)
     {
         //
     }
@@ -67,7 +58,7 @@ class WordController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(word $word)
+    public function destroy(Wilaya $wilaya)
     {
         //
     }

@@ -4,6 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Slang;
+use App\Models\Wilaya;
+use App\Models\User;
+use App\Models\Comment;
 
 class Word extends Model
 {
@@ -37,9 +41,16 @@ class Word extends Model
         return $this->hasMany(Comment::class);
     }
 
+   // Word.php
+
     public function slang()
     {
-        return $this->belongsTo(Slang::class);
+        return $this->belongsToMany(Slang::class);
+    }
+
+    public function wilayas()
+    {
+        return $this->belongsToMany(Wilaya::class);
     }
 
     public function author()

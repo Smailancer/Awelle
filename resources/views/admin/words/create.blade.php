@@ -12,11 +12,11 @@
             <x-form.field>
                 <x-form.label name="slang"/>
 
-                <select name="slang_id" id="slang_id" required>
+                <select name="slangs[]" id="slangs" multiple required>
                     @foreach (\App\Models\Slang::all() as $slang)
                         <option
                             value="{{ $slang->id }}"
-                            {{ old('slang_id') == $slang->id ? 'selected' : '' }}
+                            {{ in_array($slang->id, old('slangs', [])) ? 'selected' : '' }}
                         >{{ ucwords($slang->name) }}</option>
                     @endforeach
                 </select>

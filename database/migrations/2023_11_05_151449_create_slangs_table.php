@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('slangs', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->string('slug')->unique();
+            $table->string('ar_name');
+            $table->text('description');
             $table->timestamps();
         });
     }

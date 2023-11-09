@@ -9,7 +9,9 @@
   
 
                     <div class="space-x-2">
-                        <x-slang-button :slang="$word->slang"/>
+                        @foreach($word->slang as $slang)
+                            <x-slang-button :slang="$slang" />
+                        @endforeach
                     </div>
                 </div>
 

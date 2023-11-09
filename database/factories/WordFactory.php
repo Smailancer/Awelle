@@ -28,7 +28,7 @@ class WordFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'slang_id' => Slang::factory(),
+            // 'slang_id' => Slang::factory(),
             'term' => $this->faker->sentence(),
             'slug' => $this->faker->slug(),
             'exemple' =>  $this->faker->paragraph(3),

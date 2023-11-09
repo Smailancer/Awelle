@@ -10,7 +10,9 @@
         <div class="mt-6 flex flex-col justify-between flex-1">
             <header>
                 <div class="space-x-2">
-                   <x-slang-button :slang="$word->slang" />
+                    @foreach($word->slang as $slang)
+                        <x-slang-button :slang="$slang" />
+                    @endforeach
                 </div>
              
 

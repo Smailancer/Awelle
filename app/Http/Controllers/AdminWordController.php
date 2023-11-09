@@ -10,7 +10,7 @@ class AdminWordController extends Controller
     public function index()
     {
         return view('admin.words.index', [
-            'words' => Word::paginate(50)
+                'words' => Word::latest()->paginate(50)->withQueryString()
         ]);
     }
 
@@ -64,7 +64,6 @@ class AdminWordController extends Controller
             'slug' => ['required', Rule::unique('words', 'slug')->ignore($word)],
             'exemple' => 'required',
             'meaning' => 'required',
-            'slang_id' => ['required', Rule::exists('slangs', 'id')]
         ]);
     }
 }

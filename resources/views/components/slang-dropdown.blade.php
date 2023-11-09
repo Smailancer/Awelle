@@ -1,3 +1,5 @@
+
+
 <x-dropdown1>
     <x-slot name="trigger">
         <button class="py-2 pl-3 pr-9 text-sm font-semibold w-full lg:w-32 text-left flex lg:inline-flex">
@@ -13,18 +15,18 @@
     >
         All
     </x-dropdown-item>
-{{--     
+    
     @foreach ($slangs as $slang)
     
         <x-dropdown-item
 
-            href="/?slang={{ $slang->slug }}&{{ http_build_query(request()->except('slang', 'page')) }}"
-            :active='request()->fullUrlIs("*?slang={$slang->slug}*")'>
+            href="/?slang={{ $slang->name }}&{{ http_build_query(request()->except('slang', 'page')) }}"
+            :active='request()->fullUrlIs("*?slang={$slang->name}*")'>
 
             {{ ucwords($slang->name) }}
 
         </x-dropdown-item>
 
-    @endforeach  --}}
+    @endforeach 
 
 </x-dropdown1>

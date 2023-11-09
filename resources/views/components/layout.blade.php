@@ -6,6 +6,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
+
 <style>
     html {
         scroll-behavior: smooth;
@@ -24,12 +25,12 @@
 
 <body style="font-family: Open Sans, sans-serif">
  
-    <section class="px-6 py-8">
+    <section class="px-6 py-8 min-h-screen">
        
        
-        <nav class="md:flex md:justify-between md:items-center">
+        <nav class="md:flex md:justify-between md:items-center ">
             <div>
-                <a href="{{ route('dashboard') }}">
+                <a href="{{ route('home') }}">
                     <x-application-logo class="block w-auto fill-current " />
                 </a>
             </div>
@@ -38,7 +39,7 @@
                 @auth
                     <x-dropdown1>
                         <x-slot name="trigger">
-                            <button class="text-xs font-bold uppercase">
+                            <button class="text-xs font-bold ">
                                 Welcome, {{ auth()->user()->username }}!
                             </button>
                         </x-slot>
@@ -91,6 +92,9 @@
             </div>
         </nav>
 
+         
+
+
         {{ $slot }}
 
         {{-- <footer id="newsletter"
@@ -136,42 +140,42 @@
         </footer> --}}
 
 
-<footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
-    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-        <div class="sm:flex sm:items-center sm:justify-between">
-            {{-- <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
-                <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-            </a> --}}
-
-            <div>
-                <a href="{{ route('dashboard') }}">
-                    <x-application-logo class="block w-auto fill-current " />
-                </a>
-            </div>
-            
-
-            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
-                <li>
-                    <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
-                </li>
-                <li>
-                    <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
-                </li>
-                <li>
-                    <a href="#" class="mr-4 hover:underline md:mr-6 ">Licensing</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="/" class="hover:underline">Awelle™</a>. All Rights Reserved.</span>
-    </div>
-</footer>
-
-
+        
+        
     </section>
     <x-flash/>
+    <footer class="w-full bg-white rounded-lg shadow dark:bg-gray-900 m-4">
+        <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+            <div class="sm:flex sm:items-center sm:justify-between">
+                {{-- <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
+                    <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                </a> --}}
+    
+                <div>
+                    <a href="{{ route('home') }}">
+                        <x-application-logo class="w-auto fill-current flex items-center sm:mb-0" />
+                    </a>
+                </div>
+                
+    
+                <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0  dark:text-gray-400">
+                    <li>
+                        <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+                    </li>
+                    <li>
+                        <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#" class="mr-4 hover:underline md:mr-6 ">Licensing</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:underline">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="/" class="hover:underline">Awelle™</a>. All Rights Reserved.</span>
+        </div>
+    </footer>
 </body>

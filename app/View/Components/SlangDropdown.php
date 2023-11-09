@@ -14,7 +14,7 @@ class SlangDropdown extends Component
     {
         return view('components.slang-dropdown', [
             'slangs' => Slang::all(),
-            'currentSlang' => Slang::firstWhere('slug', request('slang'))
+            'currentSlang' => Slang::firstWhere('name', request('slang'))
         ]);
     }
 }
