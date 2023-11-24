@@ -12,6 +12,6 @@ class SlangSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+
     }
 }

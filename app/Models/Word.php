@@ -12,7 +12,7 @@ use App\Models\Comment;
 class Word extends Model
 {
     use HasFactory;
-     protected $with = ['slang', 'author'];
+    //  protected $with = ['slang', 'author'];
 
     public function scopeFilter($query, array $filters)
     {
@@ -25,7 +25,7 @@ class Word extends Model
 
         $query->when($filters['slang'] ?? false, fn($query, $slang) =>
             $query->whereHas('slang', fn ($query) =>
-                $query->where('slug', $slang)
+                $query->where('name', $slang)
             )
         );
 

@@ -41,11 +41,20 @@ class AppServiceProvider extends ServiceProvider
         Model::unguard();
 
         Gate::define('admin', function (User $user) {
-            return $user->username === 'admin';
+            return $user->role === 'admin';
         });
 
         Blade::if('admin', function () {
             return request()->user()?->can('admin');
+        });
+
+
+        Gate::define('update-word', function ($user, $word) {
+            return $user->id === $word->user_id || $user->isAdmin();
+        });
+
+        Gate::define('delete-word', function ($user, $word) {
+            return $user->id === $word->user_id || $user->isAdmin();
         });
     }
 }

@@ -15,9 +15,9 @@
     >
         All
     </x-dropdown-item>
-    
+
     @foreach ($slangs as $slang)
-    
+
         <x-dropdown-item
 
             href="/?slang={{ $slang->name }}&{{ http_build_query(request()->except('slang', 'page')) }}"
@@ -27,6 +27,6 @@
 
         </x-dropdown-item>
 
-    @endforeach 
+    @endforeach
 
 </x-dropdown1>

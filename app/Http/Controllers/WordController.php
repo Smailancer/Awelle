@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorewordRequest;
 use App\Http\Requests\UpdatewordRequest;
 use App\Models\word;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Arr;
+
 
 class WordController extends Controller
 {
@@ -33,42 +36,69 @@ class WordController extends Controller
      */
     public function create()
     {
-        //
+        return view('words.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StorewordRequest $request)
+    public function store()
     {
-        //
+
+        $attributes = array_merge($this->validateWord(), [
+            'user_id' => request()->user()->id,
+        ]);
+
+        // Create the word without the slangs
+        $word = Word::create(Arr::except($attributes, 'slangs'));
+
+        // Attach selected slangs to the word
+        $word->slang()->attach(request('slangs'));
+
+        return redirect(route('home'))->with('success', 'Word Created!');
+
     }
 
-    /**
-     * Display the specified resource.
-     */
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(word $word)
+    public function edit(Word $word)
     {
-        //
+        return view('words.edit', ['word' => $word]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdatewordRequest $request, word $word)
+    public function update(Word $word)
     {
-        //
+        // $attributes = $this->validateWord($word);
+
+        // $word->update($attributes);
+
+        // return back()->with('success', 'Word Updated!');
+
+        $attributes = $this->validateWord($word);
+
+        // Update the word without updating the slangs
+        $word->update(Arr::except($attributes, 'slangs'));
+
+        // Sync selected slangs to the word
+        $word->slang()->sync(request('slangs'));
+
+        return redirect(route('home'))->with('success', 'Word Updated!');
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(word $word)
+    public function destroy(Word $word)
     {
-        //
+        $word->delete();
+
+        return redirect(route('home'))->with('success', 'Word Deleted!');
+    }
+
+    protected function validateWord(?Word $word = null): array
+    {
+        $word ??= new Word();
+
+        return request()->validate([
+            'term' => 'required',
+            // 'thumbnail' => $word->exists ? ['image'] : ['required', 'image'],
+            'slug' => ['required', Rule::unique('words', 'slug')->ignore($word)],
+            'exemple' => 'required',
+            'meaning' => 'required',
+            'slangs' => 'required|array', // Ensure slangs is an array
+        ]);
     }
 }

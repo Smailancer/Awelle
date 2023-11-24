@@ -1,7 +1,8 @@
-<header class="max-w-xl mx-auto mt-20 text-center">
-    <h1 class="text-4xl">
-        All the <span class="text-blue-500">Algerian Words</span>
-    </h1>
+<header class="w-full mx-0 py-12 text-center mt-5 bg-sky-500">
+
+    <h1 class="mb-4 text-3xl font-extrabold text-yellow-500 dark:text-white md:text-5xl lg:text-6xl"> AWELLE </h1>
+    <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">The First Tamazight Digital Dictionary.</p>
+
 
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-4">
         <div class="relative lg:inline-flex bg-gray-100 rounded-xl">
@@ -17,8 +18,8 @@
 
                 <input type="text"
                        name="search"
-                       placeholder="Find something"
-                       class="bg-transparent placeholder-black font-semibold text-sm"
+                       placeholder="Find a word"
+                       class="bg-transparent placeholder-grey font-semibold text-sm"
                        value="{{ request('search') }}"
                 >
             </form>

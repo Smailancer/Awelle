@@ -3,10 +3,11 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Word;
 use App\Models\Slang;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,16 +21,19 @@ class DatabaseSeeder extends Seeder
         parent::call(WilayaSeeder::class);
 
         $user = User::factory()->create([
-            'username' => 'smail',
-            'email' => 'smail2@admin.com',
+            'username' => 'smaily',
+            'role' => 'admin',
+            'email' => 'smail@admin.com',
+            'password' => Hash::make('azerty123'), // Set the password to 'azerty123'
+
         ]);
 
         $slangsData = [
-            [
-                'name' => 'Darja',
-                'ar_name' => 'الدارجة',
-                'description' => 'Description for Darja slang.',
-            ],
+            // [
+            //     'name' => 'Darja',
+            //     'ar_name' => 'الدارجة',
+            //     'description' => 'Description for Darja slang.',
+            // ],
             [
                 'name' => 'Kabyle',
                 'ar_name' => 'القبائلية',

@@ -15,13 +15,29 @@ class User extends Authenticatable
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+
      */
     protected $fillable = [
         'username',
+        'name',
         'email',
         'password',
     ];
+
+      /**
+     * Check if the user has the admin role.
+     *
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isEditor()
+    {
+        return $this->role === 'editor';
+    }
 
     /**
      * The attributes that should be hidden for serialization.

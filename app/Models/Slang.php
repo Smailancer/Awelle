@@ -11,7 +11,7 @@ class Slang extends Model
 
     // Slang.php
 
-            public function words()
+    public function words()
     {
         return $this->belongsToMany(Word::class);
     }

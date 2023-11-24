@@ -16,7 +16,7 @@ class AdminWordController extends Controller
 
     public function create()
     {
-        return view('admin.words.create');
+        return view('words.create');
     }
 
     public function store()
@@ -31,7 +31,7 @@ class AdminWordController extends Controller
 
     public function edit(Word $word)
     {
-        return view('admin.words.edit', ['word' => $word]);
+        return view('words.edit', ['word' => $word]);
     }
 
     public function update(Word $word)
@@ -64,6 +64,7 @@ class AdminWordController extends Controller
             'slug' => ['required', Rule::unique('words', 'slug')->ignore($word)],
             'exemple' => 'required',
             'meaning' => 'required',
+            // 'slang_id' => 'required',
         ]);
     }
 }
