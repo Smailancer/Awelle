@@ -20,6 +20,10 @@ use App\Http\Controllers\AdminWordController;
 Route::get('/', [WordController::class, 'index'])->name('home');
 
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
+Route::get('/Tamlab', [WordController::class, 'lab'])->name('TamLab');
+Route::get('/Procourt', [WordController::class, 'court'])->name('Procourt');
+Route::get('/Academy', [WordController::class, 'academy'])->name('Academy');
+Route::get('/About', [WordController::class, 'about'])->name('About');
 
 
 Route::resource('words', WordController::class)->parameters(['words' => 'word:slug']);

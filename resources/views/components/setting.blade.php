@@ -6,6 +6,7 @@
     </h1>
 
     <div class="flex">
+        @admin
         <aside class="w-48 flex-shrink-0">
             <h4 class="font-semibold mb-4">Links</h4>
 
@@ -19,7 +20,7 @@
                 </li>
             </ul>
         </aside>
-
+        @endadmin
         <main class="flex-1">
             <x-panel>
                 {{ $slot }}

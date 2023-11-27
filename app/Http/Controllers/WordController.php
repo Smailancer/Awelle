@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Word;
+use Illuminate\Support\Arr;
+use Illuminate\Validation\Rule;
 use App\Http\Requests\StorewordRequest;
 use App\Http\Requests\UpdatewordRequest;
-use App\Models\word;
-use Illuminate\Validation\Rule;
-use Illuminate\Support\Arr;
 
 
 class WordController extends Controller
@@ -87,6 +87,25 @@ class WordController extends Controller
 
         return redirect(route('home'))->with('success', 'Word Deleted!');
     }
+
+    public function lab()
+    {
+        return view('lab');
+    }
+
+    public function court()
+    {
+        return view('court');
+    }
+    public function academy()
+    {
+        return view('academy');
+    }
+    public function about()
+    {
+        return view('about');
+    }
+
 
     protected function validateWord(?Word $word = null): array
     {
