@@ -14,14 +14,15 @@
                         <x-slang-button :slang="$slang" />
                     @endforeach
                 </div>
-             
+
 
                 <div class="mt-4">
                     <h1 class="text-3xl clamp one-line">
-                        <a href="/words/{{ $word->slug }}">
+                        <a href="/words/{{ $word->slug }}" style="font-family: 'Amiri Quran', serif;">
                             {{ $word->term }}
                         </a>
                     </h1>
+
 
                     <span class="mt-2 block text-gray-400 text-x">
                         <time>{{ $word->slug }}</time>
@@ -35,7 +36,7 @@
             <div class="text-sm mt-4 space-y-4">
                  {{ Str::limit($word->meaning, 100) }}
             </div>
-{{-- 
+{{--
             <footer class="flex justify-between items-center mt-8">
                 <div class="flex items-center text-sm">
                     <img src="/images/lary-avatar.svg" alt="Lary avatar">

@@ -15,7 +15,7 @@
                     </div>
                 </div>
 
-                <h1 class="font-bold text-3xl lg:text-4xl mb-10">
+                <h1 class="font-bold text-3xl lg:text-4xl mb-10" style="font-family: 'Amiri Quran', serif;">
                     {{ $word->term }}
                 </h1>
 

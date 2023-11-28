@@ -20,6 +20,7 @@ class Word extends Model
             $query->where(fn($query) =>
                 $query->where('term', 'like', '%' . $search . '%')
                     ->orWhere('meaning', 'like', '%' . $search . '%')
+                    ->orWhere('slug', 'like', '%' . $search . '%')
             )
         );
 
