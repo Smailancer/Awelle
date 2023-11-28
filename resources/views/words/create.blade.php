@@ -1,27 +1,139 @@
 <x-layout>
     <x-setting heading="Publish New Word">
-        <form method="POST" action="/words" enctype="multipart/form-data">
-            @csrf
+
+
+            <section class="bg-white dark:bg-gray-900">
+                <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+                    <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add a new word</h2>
+                    <form method="POST" action="/words" enctype="multipart/form-data">
+                        @csrf
+                        <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+                            <div class="sm:col-span-2">
+
+                                <label for="term" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">The Term</label>
+                                <input required name="term" id="term" value="{{ old('term') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="أمان">
+                                <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Please write the term in arabic letters</p>
+
+                                @error("term")
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                @enderror
+
+                            </div>
+
+                            <div class="sm:col-span-2">
+
+                                <label for="slug" class="block mb-2 text-sm  font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Prononciation</label>
+                                <input required name="slug" id="slug" value="{{ old('slug') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Aman">
+                                <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Please write the prononciation in latin letters + numbers (A-Z / 0 -9) </p>
+
+                                @error("slug")
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                @enderror
+                            </div>
+
+
+                            <div>
+                                <label for="slangs" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Slang</label>
+                                <select multiple required name="slangs[]" id="slangs" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                                    @foreach (\App\Models\Slang::all() as $slang)
+                                        <option
+                                            value="{{ $slang->id }}"
+                                            {{ in_array($slang->id, old('slangs', [])) ? 'selected' : '' }}
+                                        >{{ ucwords($slang->name) }}</option>
+                                      @endforeach
+                                </select>
+                                @error("slangs")
+                                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                            @enderror
+                            </div>
+
+                            <div>
+                                <label for="countries_multiple" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Select Regions</label>
+                                    <select  disabled id="wilayas_multiple" class=" bg-gray-400 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <option selected>Not available for now</option>
+                                    <option value="US">North</option>
+                                    <option value="CA">South</option>
+                                    <option value="FR">East</option>
+                                    <option value="DE">West</option>
+                                    </select>
+                            </div>
+
+
+
+                            <div class="sm:col-span-2">
+                                <label for="meaning" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Explanation</label>
+                                <textarea  name="meaning" id="meaning" required rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here"></textarea>
+                                @error("meaning")
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                 @enderror
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <label for="exemple" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Example</label>
+                                <textarea  name="exemple" id="exemple" required rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here"></textarea>
+                            </div>
+                            @error("exemple")
+                                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                             @enderror
+                        </div>
+
+                        {{-- <button type="submit" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                            Add word
+                        </button> --}}
+                        <x-form.button>Publish</x-form.button>
+                    </form>
+                </div>
+              </section>
+
+
+              {{-- <x-form.label name="{{ $name }}" />
+
+              <textarea
+                  class="border border-gray-200 p-2 w-full rounded"
+                  name="{{ $name }}"
+                  id="{{ $name }}"
+                  required
+                  {{ $attributes }}
+              >{{ $slot ?? old($name) }}</textarea>
+
+              <x-form.error name="{{ $name }}" /> --}}
+
+
+            {{-- <label for="term" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">The Term</label>
+            <input name="term" id="term" value="{{ old('term') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="أمان">
+            <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Write the term please in arabic letters</p>
+
+            @error("term")
+                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
+
+
+            <label for="slug" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prononciation</label>
+<input name="slug" id="slug" value="{{ old('slug') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Aman">
+<p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">write the prononciation please in latin letters + numbers (A-Z / 0 -9) </p>
+@error("slug")
+    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+@enderror --}}
+
+    {{-- <input class="border border-gray-200 p-2 w-full rounded"
+           name="{{ $name }}"
+           id="{{ $name }}"
+           {{ $attributes(['value' => old($name)]) }}
+    >
+
+    <x-form.error name="{{ $name }}"/>
 
             <x-form.input name="term" required />
-            <x-form.input name="slug" required />
-            {{-- <x-form.input name="thumbnail" type="file" required /> --}}
-            <x-form.textarea name="meaning" required />
+            <x-form.input name="slug" required /> --}}
+            {{-- <x-form.textarea name="meaning" required />
             <x-form.textarea name="exemple" required />
 
-            <x-form.field>
-                <x-form.label name="slang"/>
+            <x-form.field> --}}
+            {{-- <x-form.label name="slang"/> --}}
+
+
 
                 {{-- <select name="slangs[]" id="slangs" multiple required>
-                    @foreach (\App\Models\Slang::all() as $slang)
-                        <option
-                            value="{{ $slang->id }}"
-                            {{ in_array($slang->id, old('slangs', [])) ? 'selected' : '' }}
-                        >{{ ucwords($slang->name) }}</option>
-                    @endforeach
-                </select> --}}
-
-                <select name="slangs[]" id="slangs" multiple required>
                     @foreach (\App\Models\Slang::all() as $slang)
                         <option
                             value="{{ $slang->id }}"
@@ -31,9 +143,9 @@
                 </select>
 
                 <x-form.error name="slang"/>
-            </x-form.field>
+            </x-form.field> --}}
 
-            <x-form.button>Publish</x-form.button>
-        </form>
+            {{-- <x-form.button>Publish</x-form.button>
+        </form> --}}
     </x-setting>
 </x-layout>

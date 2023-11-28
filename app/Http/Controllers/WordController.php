@@ -77,7 +77,7 @@ class WordController extends Controller
         // Sync selected slangs to the word
         $word->slang()->sync(request('slangs'));
 
-        return redirect(route('home'))->with('success', 'Word Updated!');
+        return redirect()->route('words.show', $word)->with('success', 'Word Updated!');
 
     }
 

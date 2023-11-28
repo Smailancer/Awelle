@@ -7,7 +7,7 @@
 
     <div class="flex">
         @admin
-        <aside class="w-48 flex-shrink-0">
+        {{-- <aside class="w-48 flex-shrink-0">
             <h4 class="font-semibold mb-4">Links</h4>
 
             <ul>
@@ -19,7 +19,7 @@
                     <a href="/admin/words/create" class="{{ request()->is('admin/words/create') ? 'text-blue-500' : '' }}">New word</a>
                 </li>
             </ul>
-        </aside>
+        </aside> --}}
         @endadmin
         <main class="flex-1">
             <x-panel>

@@ -34,37 +34,38 @@
                     <p>{{ $word->exemple }}</p>
                 </blockquote>
 
-                 <div class=" lg:justify-center text-sm mt-4">
 
-                    <div class="ml-3 text-left">
-                        <h5 class="font-bold">
-                            <a href="/?author={{ $word->author->username }}">{{ $word->author->username }}</a>
-                        </h5>
-                    </div>
+            </td>
+
+            <div class="lg:justify-center text-sm mt-6">
+                <div class="ml-3 text-left">
+                    <h5 class="font-bold mb-2">
+                        <a href="/?author={{ $word->author->username }}">{{ $word->author->username }}</a>
+                    </h5>
                 </div>
+            </div>
 
-            <p class="mt-6 text-gray-400 text-xs">
+
+            {{-- <p class="mt-6 text-gray-400 text-xs">
                 Published
                 <time>{{ $word->created_at->diffForHumans() }}</time>
-            </p>
+            </p> --}}
 
-        </td>
 
 {{-- Edit and delete buttons   --}}
 @can('update-word', $word)
 
-        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-            <a href="/words/{{ $word->slug }}/edit" class="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">Edit</a>
-        </td>
-
-
 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-    <form method="POST" action="/words/{{ $word->slug }}">
-        @csrf
-        @method('DELETE')
+    <div class="flex space-x-2">
+        <a href="/words/{{ $word->slug }}/edit" class="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">Edit</a>
 
-        <button class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
-    </form>
+        <form method="POST" action="/words/{{ $word->slug }}">
+            @csrf
+            @method('DELETE')
+
+            <button class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
+        </form>
+    </div>
 </td>
 
 @endcan

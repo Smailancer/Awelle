@@ -19,22 +19,24 @@ use App\Http\Controllers\AdminWordController;
 
 Route::get('/', [WordController::class, 'index'])->name('home');
 
-Route::get('/contact', [ContactController::class, 'show'])->name('contact');
+Route::resource('words', WordController::class)->parameters(['words' => 'word:slug']);
+
+Route::middleware('can:admin')->group(function () {
+    Route::resource('admin/words', AdminWordController::class)->except('show')->parameters(['words' => 'word:slug']);
+});
+
+Route::get('/Contact', [ContactController::class, 'show'])->name('contact');
 Route::get('/Tamlab', [WordController::class, 'lab'])->name('TamLab');
 Route::get('/Procourt', [WordController::class, 'court'])->name('Procourt');
 Route::get('/Academy', [WordController::class, 'academy'])->name('Academy');
 Route::get('/About', [WordController::class, 'about'])->name('About');
 
 
-Route::resource('words', WordController::class)->parameters(['words' => 'word:slug']);
 
 
 // Route::word('words/{word:slug}/comments', [CommentController::class, 'store']);
 
 // Admin Section
-Route::middleware('can:admin')->group(function () {
-    Route::resource('admin/words', AdminWordController::class)->except('show')->parameters(['words' => 'word:slug']);
-});
 
 
 // Route::get('/dashboard', function () {
