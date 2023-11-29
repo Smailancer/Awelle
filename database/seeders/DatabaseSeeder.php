@@ -21,11 +21,10 @@ class DatabaseSeeder extends Seeder
         parent::call(WilayaSeeder::class);
 
         $user = User::factory()->create([
-            'username' => 'smaily',
+            'username' => 'Admin',
             'role' => 'admin',
             'email' => 'smail@admin.com',
             'password' => Hash::make('azerty123'), // Set the password to 'azerty123'
-
         ]);
 
         $slangsData = [
@@ -64,19 +63,28 @@ class DatabaseSeeder extends Seeder
         foreach ($slangsData as $slangData) {
             $slang = Slang::create($slangData);
 
-            // Attach words to the slang using the attach method
-            $words = Word::factory(10)->create([
-                'user_id' => $user->id,
-            ]);
+            if ($slang->name === 'Kabyle') {
+                // Use WordSeeder instead of Word factory for Kabyle slang
+                $this->call(WordSeeder::class);
 
-            // Assuming the pivot table is named 'slang_word'
-            foreach ($words as $word) {
-                $word->slang()->attach($slang);
+                // Get the words created by WordSeeder and attach them to the Kabyle slang
+                $words = Word::where('user_id', $user->id)->get();
+                $slang->words()->attach($words);
+            } else {
+                // Attach words to the slang using the attach method
+                $words = Word::factory(10)->create([
+                    'user_id' => $user->id,
+                ]);
+
+                // Assuming the pivot table is named 'slang_word'
+                foreach ($words as $word) {
+                    $word->slang()->attach($slang);
+                }
             }
+
             $this->command->info("Seeding completed for slang: {$slang->name}");
         }
 
         $this->command->info("All seeds completed successfully!");
-
     }
 }

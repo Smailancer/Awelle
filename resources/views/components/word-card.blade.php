@@ -24,7 +24,7 @@
                     </h1>
 
 
-                    <span class="mt-2 block text-gray-400 text-x">
+                    <span class="mt-2 block text-gray-700 text-x">
                         <time>{{ $word->slug }}</time>
                     </span>
                     {{-- <span class="mt-2 block text-gray-400 text-xs">
