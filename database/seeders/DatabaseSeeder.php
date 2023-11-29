@@ -73,6 +73,10 @@ class DatabaseSeeder extends Seeder
             foreach ($words as $word) {
                 $word->slang()->attach($slang);
             }
+            $this->command->info("Seeding completed for slang: {$slang->name}");
         }
+
+        $this->command->info("All seeds completed successfully!");
+
     }
 }

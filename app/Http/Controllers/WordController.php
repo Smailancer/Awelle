@@ -115,7 +115,7 @@ class WordController extends Controller
             'term' => 'required',
             // 'thumbnail' => $word->exists ? ['image'] : ['required', 'image'],
             'slug' => ['required', Rule::unique('words', 'slug')->ignore($word)],
-            'exemple' => 'required',
+            // 'exemple' => 'required',
             'meaning' => 'required',
             'slangs' => 'required|array', // Ensure slangs is an array
         ]);

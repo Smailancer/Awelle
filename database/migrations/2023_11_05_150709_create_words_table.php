@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('words', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->string('slug')->unique();
+            $table->string('slug');
             $table->string('term');
             $table->text('meaning');
-            $table->text('exemple');
+            $table->text('exemple')->nullable();
             $table->timestamps();
         });
     }
