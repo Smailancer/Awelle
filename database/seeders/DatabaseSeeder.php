@@ -44,13 +44,18 @@ class DatabaseSeeder extends Seeder
                 'description' => 'Description for Mozabit slang.',
             ],
             [
-                'name' => 'Chawi',
+                'name' => 'Chaoui',
                 'ar_name' => 'الشاوية',
                 'description' => 'Description for Chawi slang.',
             ],
             [
-                'name' => 'Chenwi',
+                'name' => 'Chenoui',
                 'ar_name' => 'الشنوية',
+                'description' => 'Description for Chenwi slang.',
+            ],
+            [
+                'name' => 'Chleuh',
+                'ar_name' => 'الشلحية',
                 'description' => 'Description for Chenwi slang.',
             ],
             [

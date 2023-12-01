@@ -13,7 +13,7 @@ class CommentController extends Controller
      * Display a listing of the resource.
      */
 
-     
+
     public function index()
     {
         //
@@ -33,7 +33,7 @@ class CommentController extends Controller
      public function store(Word $post)
     {
         request()->validate([
-            'meanng' => 'required'
+            'meaning' => 'required'
         ]);
 
         $post->comments()->create([

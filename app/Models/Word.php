@@ -19,7 +19,11 @@ class Word extends Model
         $query->when($filters['search'] ?? false, fn($query, $search) =>
             $query->where(fn($query) =>
                 $query->where('term', 'like', '%' . $search . '%')
-                    ->orWhere('meaning', 'like', '%' . $search . '%')
+                    ->orWhere('ar_meaning', 'like', '%' . $search . '%')
+                    ->orWhere('fr_meaning', 'like', '%' . $search . '%')
+                    ->orWhere('en_meaning', 'like', '%' . $search . '%')
+                    ->orWhere('tifinagh', 'like', '%' . $search . '%')
+                    ->orWhere('variants', 'like', '%' . $search . '%')
                     ->orWhere('slug', 'like', '%' . $search . '%')
             )
         );

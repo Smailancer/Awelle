@@ -82,9 +82,10 @@
 
 
 
-
     </section>
     <x-flash/>
+
+
 
     @include('layouts.footer')
 

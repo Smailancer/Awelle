@@ -3,12 +3,13 @@
 @php
     // Define an array of colors for each slang
     $colorMap = [
-        'Kabyle' => 'bg-blue-300 text-blue-800',
-        'Mozabit' => 'bg-green-300 text-green-800',
-        'Chawi' => 'bg-yellow-300 text-yellow-800',
-        'Chenwi' => 'bg-red-300 text-red-800',
-        'Targui' => 'bg-purple-300 text-purple-800',
-    ];
+    'Kabyle' => 'bg-blue-400 text-blue-800',
+    'Mozabit' => 'bg-green-400 text-green-800',
+    'Chaoui' => 'bg-yellow-400 text-yellow-800',
+    'Chenoui' => 'bg-red-400 text-red-800',
+    'Targui' => 'bg-purple-400 text-purple-800',
+    'Chleuh' => 'bg-pink-400 text-pink-800', // Add Chleuh with the desired color classes
+];
 
     // Get the color for the current slang or default to a fallback
     $colorClasses = $colorMap[$slang->name] ?? 'bg-gray-300 text-gray-800';

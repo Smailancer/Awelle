@@ -21,37 +21,37 @@ class WordSeeder extends Seeder
             [
                 'term' => 'ثِقْشِيشِين',
                 'slug' => 'Thiq-sheesh-een',
-                'meaning' => 'البنات',
+                'ar_meaning' => 'البنات',
             ],
             [
                 'term' => 'أرَّاشْ',
                 'slug' => 'Arrāsh',
-                'meaning' => 'الذكور',
+                'ar_meaning' => 'الذكور',
             ],
             [
                 'term' => 'ايـgـُـرْذَانْ',
                 'slug' => 'Aigurḍān',
-                'meaning' => 'الصغار',
+                'ar_meaning' => 'الصغار',
             ],
             [
                 'term' => 'ثـَمَطُّوثْ',
                 'slug' => 'Thamaṭṭūth',
-                'meaning' => 'امرأة',
+                'ar_meaning' => 'امرأة',
             ],
             [
                 'term' => 'ارgْـَـازْ',
                 'slug' => 'Argāz',
-                'meaning' => 'رجل',
+                'ar_meaning' => 'رجل',
             ],
             [
                 'term' => 'امَدَّاكْلِيوْ',
                 'slug' => 'Amaddākliw',
-                'meaning' => 'صديقي',
+                'ar_meaning' => 'صديقي',
             ],
             [
                 'term' => 'ثَمَدَّكُلْتِيوْ',
                 'slug' => 'Thamaddākultiw',
-                'meaning' => 'صديقتي',
+                'ar_meaning' => 'صديقتي',
             ],
         ];
 
@@ -60,7 +60,7 @@ class WordSeeder extends Seeder
                 'user_id' => $user->id,
                 'term' => $wordData['term'],
                 'slug' => $wordData['slug'],
-                'meaning' => $wordData['meaning'],
+                'ar_meaning' => $wordData['ar_meaning'],
             ]);
         }
 

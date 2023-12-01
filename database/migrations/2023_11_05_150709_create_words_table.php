@@ -15,9 +15,15 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('slug');
+            $table->string('tifinagh')->nullable();
             $table->string('term');
-            $table->text('meaning');
+            $table->string('type')->nullable();
+            $table->string('variants')->nullable();
+            $table->text('ar_meaning')->nullable();
+            $table->text('fr_meaning')->nullable();
+            $table->text('en_meaning')->nullable();
             $table->text('exemple')->nullable();
+            $table->binary('audio')->nullable(); // Assuming BLOB for audio
             $table->timestamps();
         });
     }

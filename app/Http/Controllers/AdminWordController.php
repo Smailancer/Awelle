@@ -63,7 +63,11 @@ class AdminWordController extends Controller
             // 'thumbnail' => $word->exists ? ['image'] : ['required', 'image'],
             'slug' => ['required', Rule::unique('words', 'slug')->ignore($word)],
             'exemple' => 'nullable',
-            'meaning' => 'required',
+            'tifinagh' => 'nullable|string',
+            'ar_meaning' => 'nullable',
+            'fr_meaning' => 'nullable',
+            'en_meaning' => 'nullable',
+            'slangs' => 'required|array', // Ensure slangs is an array
             // 'slang_id' => 'required',
         ]);
     }

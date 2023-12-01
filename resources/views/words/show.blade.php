@@ -24,17 +24,44 @@
                 </p>
 
 
-                <div class="space-y-4 lg:text-lg leading-loose">{!! $word->meaning !!}</div>
+                <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+                    <ul class="flex -mb-px text-sm font-medium text-center overflow-x-auto" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+                        <li class="flex-none">
+                            <button class="inline-block px-4 py-2 border-b-2 rounded-t-lg focus:outline-none" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Arabic meaning</button>
+                        </li>
+                        <li class="flex-none">
+                            <button class="inline-block px-4 py-2 border-b-2 rounded-t-lg focus:outline-none hover:text-gray-600 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">French meaning</button>
+                        </li>
+                        <li class="flex-none">
+                            <button class="inline-block px-4 py-2 border-b-2 rounded-t-lg focus:outline-none hover:text-gray-600 dark:hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">English meaning</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="default-tab-content">
+                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="space-y-4 lg:text-lg leading-loose">{!! $word->ar_meaning !!}</div>
+                    </div>
+                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                        <div class="space-y-4 lg:text-lg leading-loose">{!! $word->fr_meaning !!}</div>
+                    </div>
+                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                        <div class="space-y-4 lg:text-lg leading-loose">{!! $word->en_meaning !!}</div>
+                    </div>
+                </div>
+
+
+
+                {{-- <div class="space-y-4 lg:text-lg leading-loose">{!! $word->ar_meaning !!}</div> --}}
 <br>
 
 
             @if ($word->exemple)
-            <blockquote class="p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
-                <svg class="w-8 h-8 text-gray-400 dark:text-gray-600 mb-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
-                    <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
-                </svg>
-                <p>{{ $word->exemple }}</p>
+
+            <blockquote class="p-4 my-4 border-s-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
+                <p class="text-xl italic font-medium leading-relaxed text-gray-900 dark:text-white">{{ $word->exemple }}</p>
             </blockquote>
+
             @endif
 
 

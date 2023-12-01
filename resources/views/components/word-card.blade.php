@@ -9,15 +9,16 @@
 
         <div class="mt-6 flex flex-col justify-between flex-1">
             <header>
-                <div class="space-x-2">
+                <div class="space-x-2 flex flex-wrap">
                     @foreach($word->slang as $slang)
-                        <x-slang-button :slang="$slang" />
+                        <x-slang-button :slang="$slang" class="mb-6 mr-2 " />
                     @endforeach
                 </div>
 
 
+
                 <div class="mt-4">
-                    <h1 class="text-3xl clamp one-line">
+                    <h1 class="text-3xl leading-loose clamp one-line">
                         <a href="/words/{{ $word->slug }}" style="font-family: 'Amiri Quran', serif;">
                             {{ $word->term }}
                         </a>
@@ -25,17 +26,17 @@
 
 
                     <span class="mt-2 block text-gray-700 text-x">
-                        <time>{{ $word->slug }}</time>
+                        <h2>{{ $word->slug }}</h2>
                     </span>
                     {{-- <span class="mt-2 block text-gray-400 text-xs">
                         Published <time>{{ $word->created_at->diffForHumans() }}</time>
                     </span> --}}
                 </div>
+                <div class="text-sm mt-4 space-y-4">
+                     {{ Str::limit($word->ar_meaning, 100) }}
+                </div>
             </header>
 
-            <div class="text-sm mt-4 space-y-4">
-                 {{ Str::limit($word->meaning, 100) }}
-            </div>
 {{--
             <footer class="flex justify-between items-center mt-8">
                 <div class="flex items-center text-sm">

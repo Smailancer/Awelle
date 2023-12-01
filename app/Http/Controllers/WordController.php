@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Word;
 use Illuminate\Support\Arr;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StorewordRequest;
 use App\Http\Requests\UpdatewordRequest;
 
@@ -36,6 +37,10 @@ class WordController extends Controller
      */
     public function create()
     {
+        if (!Auth::check()) {
+            // Redirect to the login page with a message
+            return redirect()->route('login')->with('info', 'You need to log in to create a new word.');
+        }
         return view('words.create');
     }
 
@@ -116,7 +121,10 @@ class WordController extends Controller
             // 'thumbnail' => $word->exists ? ['image'] : ['required', 'image'],
             'slug' => ['required', Rule::unique('words', 'slug')->ignore($word)],
             'exemple' => 'nullable',
-            'meaning' => 'required',
+            'tifinagh' => 'nullable|string',
+            'ar_meaning' => 'nullable',
+            'fr_meaning' => 'nullable',
+            'en_meaning' => 'nullable',
             'slangs' => 'required|array', // Ensure slangs is an array
         ]);
     }
