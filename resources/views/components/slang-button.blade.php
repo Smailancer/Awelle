@@ -8,7 +8,7 @@
     'Chaoui' => 'bg-yellow-400 text-yellow-800',
     'Chenoui' => 'bg-red-400 text-red-800',
     'Targui' => 'bg-purple-400 text-purple-800',
-    'Chleuh' => 'bg-pink-400 text-pink-800', // Add Chleuh with the desired color classes
+    'Chleuh' => 'bg-gray-200 text-gray-800', // Add Chleuh with the desired color classes
 ];
 
     // Get the color for the current slang or default to a fallback
