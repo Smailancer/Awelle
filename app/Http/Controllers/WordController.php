@@ -39,7 +39,7 @@ class WordController extends Controller
     {
         if (!Auth::check()) {
             // Redirect to the login page with a message
-            return redirect()->route('login')->with('info', 'You need to log in to create a new word.');
+            return redirect()->route('login')->with('info', 'Log in to create a new word.');
         }
         return view('words.create');
     }

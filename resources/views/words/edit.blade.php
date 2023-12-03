@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
     <x-setting :heading="'Edit '">
 
             <section class="bg-white dark:bg-gray-900">
@@ -163,4 +163,4 @@
         </div>
     </section>
     </x-setting>
-</x-layout>
+</x-app-layout>

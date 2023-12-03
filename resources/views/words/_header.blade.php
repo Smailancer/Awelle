@@ -1,6 +1,6 @@
-<header class="w-full mx-0 py-12 text-center mt-5 bg-sky-500">
+<header class="w-full mx-0 py-12 text-center mt-5">
 
-    <h1 class="mb-4 text-3xl font-extrabold text-yellow-500 dark:text-white md:text-5xl lg:text-6xl"> AWELLE </h1>
+    <h1 class="mb-4 text-3xl font-extrabold text-yellow-400 dark:text-white md:text-5xl lg:text-6xl"> AWELLE </h1>
     <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">The First Tamazight Digital Dictionary.</p>
 
 

@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
     <x-setting heading="Publish New Word">
 
 
@@ -188,4 +188,4 @@
             {{-- <x-form.button>Publish</x-form.button>
         </form> --}}
     </x-setting>
-</x-layout>
+</x-app-layout>
