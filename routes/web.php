@@ -22,7 +22,7 @@ Route::get('/', [WordController::class, 'index'])->name('home');
 Route::resource('words', WordController::class)->parameters(['words' => 'word:slug']);
 
 Route::middleware('can:admin')->group(function () {
-    Route::resource('admin/words', AdminWordController::class)->except('show')->parameters(['words' => 'word:slug']);
+    Route::resource('admin/words', AdminWordController::class)->except('show')->parameters(['words' => 'word:slug'])->names('admin.words');
 });
 
 Route::get('/Contact', [ContactController::class, 'show'])->name('contact');
