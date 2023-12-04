@@ -39,7 +39,7 @@ class WordController extends Controller
     {
         if (!Auth::check()) {
             // Redirect to the login page with a message
-            return redirect()->route('login')->with('info', 'Log in to create a new word.');
+            return redirect()->route('login', ['redirect' => 'words.create'])->with('info', 'Log in to create a new word.');
         }
         return view('words.create');
     }
@@ -72,7 +72,6 @@ class WordController extends Controller
 
         // $word->update($attributes);
 
-        // return back()->with('success', 'Word Updated!');
 
         $attributes = $this->validateWord($word);
 
@@ -82,7 +81,9 @@ class WordController extends Controller
         // Sync selected slangs to the word
         $word->slang()->sync(request('slangs'));
 
-        return redirect()->route('words.show', $word)->with('success', 'Word Updated!');
+        return back()->with('success', 'Word Updated!');
+
+        // return redirect()->route('words.show', $word)->with('success', 'Word Updated!');
 
     }
 
