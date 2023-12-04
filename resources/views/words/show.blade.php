@@ -56,14 +56,42 @@
 <br>
 
 
+            {{-- <p class="mb-3 text-gray-500 dark:text-gray-400">{{ $word->uses }}</p>
 
 
-            <blockquote class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <blockquote class="p-4 my-4 border-s-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800"id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <p class="text-xl italic font-medium leading-relaxed text-gray-900 dark:text-white">{{ $word->exemple }}</p>
-            </blockquote>
+            </blockquote> --}}
 
 
 
+
+
+            <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
+                    <li class="me-2">
+                        <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true" class="inline-block p-4 text-blue-600 rounded-ss-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-500">Uses</button>
+                    </li>
+                    <li class="me-2">
+                        <button id="services-tab" data-tabs-target="#services" type="button" role="tab" aria-controls="services" aria-selected="false" class="inline-block p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300">Exemples</button>
+                    </li>
+
+                </ul>
+                <div id="defaultTabContent">
+                    <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
+                        <p class="mb-3 text-gray-500 dark:text-gray-400">{{ $word->uses }}</p>
+
+                    </div>
+                    <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="services" role="tabpanel" aria-labelledby="services-tab">
+                        <!-- List -->
+                        <blockquote class="p-4 my-4 border-s-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800"id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <p class="text-xl italic font-medium leading-relaxed text-gray-900 dark:text-white">{{ $word->exemple }}</p>
+                        </blockquote>
+
+                    </div>
+
+                </div>
+            </div>
 
 
             </td>

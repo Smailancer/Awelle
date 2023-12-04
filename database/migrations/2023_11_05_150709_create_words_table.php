@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('tifinagh')->nullable();
             $table->string('term');
             $table->string('type')->nullable();
-            $table->string('variants')->nullable();
+            $table->text('uses')->nullable();
             $table->text('ar_meaning')->nullable();
             $table->text('fr_meaning')->nullable();
             $table->text('en_meaning')->nullable();

@@ -121,6 +121,7 @@ class WordController extends Controller
             // 'thumbnail' => $word->exists ? ['image'] : ['required', 'image'],
             'slug' => ['required', Rule::unique('words', 'slug')->ignore($word)],
             'exemple' => 'nullable',
+            'uses' => 'nullable',
             'tifinagh' => 'nullable|string',
             'ar_meaning' => 'nullable',
             'fr_meaning' => 'nullable',

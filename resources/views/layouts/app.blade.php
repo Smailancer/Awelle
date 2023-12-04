@@ -23,7 +23,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Cairo&display=swap" rel="stylesheet">
         <!-- Scripts -->
-        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 <style>
     html {
@@ -43,7 +43,7 @@
 
     </head>
     <body style="font-family: 'Cairo',Open Sans, sans-serif; ">
-        <div class="px-6 py-8 min-h-screen">
+        <div class="px-6 py-2 min-h-screen">
 
             @include('layouts.navigation')
 

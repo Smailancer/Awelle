@@ -23,7 +23,7 @@ class Word extends Model
                     ->orWhere('fr_meaning', 'like', '%' . $search . '%')
                     ->orWhere('en_meaning', 'like', '%' . $search . '%')
                     ->orWhere('tifinagh', 'like', '%' . $search . '%')
-                    ->orWhere('variants', 'like', '%' . $search . '%')
+                    ->orWhere('uses', 'like', '%' . $search . '%')
                     ->orWhere('slug', 'like', '%' . $search . '%')
             )
         );
