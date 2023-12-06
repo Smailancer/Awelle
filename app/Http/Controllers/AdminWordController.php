@@ -61,7 +61,7 @@ class AdminWordController extends Controller
         return request()->validate([
             'term' => 'required',
             // 'thumbnail' => $word->exists ? ['image'] : ['required', 'image'],
-            'slug' => ['required', Rule::unique('words', 'slug')->ignore($word)],
+            'slug' => 'required',
             'exemple' => 'nullable',
             'uses' => 'nullable',
             'tifinagh' => 'nullable|string',

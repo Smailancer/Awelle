@@ -30,15 +30,15 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-     public function store(Word $post)
+     public function store(Word $word)
     {
         request()->validate([
-            'meaning' => 'required'
+            'body' => 'required'
         ]);
 
-        $post->comments()->create([
+        $word->comments()->create([
             'user_id' => request()->user()->id,
-            'meaning' => request('meaning')
+            'body' => request('body')
         ]);
 
         return back();

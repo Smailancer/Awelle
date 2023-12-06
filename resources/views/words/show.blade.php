@@ -1,6 +1,8 @@
 <x-app-layout>
     <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
-        <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-10">
+@foreach($wordsWithSameTerm as $word)
+
+        <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-10 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             {{-- <div class="col-span-4 lg:text-center lg:pt-14 mb-10"> --}}
 
             <div class="col-span-8">
@@ -70,7 +72,7 @@
             <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
                     <li class="me-2">
-                        <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true" class="inline-block p-4 text-blue-600 rounded-ss-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-500">Uses</button>
+                        <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true" class="inline-block p-4 text-blue-600 rounded-ss-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-500">Uses and Notes</button>
                     </li>
                     <li class="me-2">
                         <button id="services-tab" data-tabs-target="#services" type="button" role="tab" aria-controls="services" aria-selected="false" class="inline-block p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300">Exemples</button>
@@ -116,7 +118,7 @@
 
 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
     <div class="flex space-x-2">
-        <a href="/words/{{ $word->slug }}/edit" class="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">Edit</a>
+        <a href="/words/{{ $word->id }}/edit" class="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">Edit</a>
 
         <form method="POST" action="/words/{{ $word->slug }}">
             @csrf
@@ -128,17 +130,19 @@
 </td>
 
 @endcan
+</article>
+@endforeach
 
 
 <br>
 <hr>
             <section class="col-span-8 col-start-5 mt-10 space-y-6">
+
                 @include ('words._add-comment-form')
 
                 @foreach ($word->comments as $comment)
                     <x-word-comment :comment="$comment"/>
                 @endforeach
             </section>
-        </article>
     </main>
 </x-app-layout>

@@ -26,11 +26,15 @@ class WordController extends Controller
     }
 
     public function show(Word $word)
-    {
-        return view('words.show', [
-            'word' => $word
-        ]);
-    }
+{
+    $wordsWithSameTerm = Word::where('slug', $word->slug)->get();
+
+    return view('words.show', [
+        'word' => $word,
+        'wordsWithSameTerm' => $wordsWithSameTerm,
+    ]);
+}
+
 
     /**
      * Show the form for creating a new resource.
@@ -68,10 +72,6 @@ class WordController extends Controller
 
     public function update(Word $word)
     {
-        // $attributes = $this->validateWord($word);
-
-        // $word->update($attributes);
-
 
         $attributes = $this->validateWord($word);
 
@@ -81,9 +81,9 @@ class WordController extends Controller
         // Sync selected slangs to the word
         $word->slang()->sync(request('slangs'));
 
-        return back()->with('success', 'Word Updated!');
+        // return back()->with('success', 'Word Updated!');
 
-        // return redirect()->route('words.show', $word)->with('success', 'Word Updated!');
+        return redirect()->route('words.show', $word)->with('success', 'Word Updated!');
 
     }
 
@@ -120,7 +120,7 @@ class WordController extends Controller
         return request()->validate([
             'term' => 'required',
             // 'thumbnail' => $word->exists ? ['image'] : ['required', 'image'],
-            'slug' => ['required', Rule::unique('words', 'slug')->ignore($word)],
+            'slug' => 'required',
             'exemple' => 'nullable',
             'uses' => 'nullable',
             'tifinagh' => 'nullable|string',

@@ -34,7 +34,7 @@ Route::get('/About', [WordController::class, 'about'])->name('About');
 
 
 
-// Route::word('words/{word:slug}/comments', [CommentController::class, 'store']);
+Route::post('words/{word:slug}/comments', [CommentController::class, 'store']);
 
 // Admin Section
 
