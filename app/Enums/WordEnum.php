@@ -26,7 +26,7 @@ use Spatie\Enum\Laravel\Enum;
  * @method static self FEELINGS_EMOTIONS()
  * @method static self PLACE_EXPRESSION()
  */
-class WordEnum extends Enum
+final class WordEnum extends Enum
 {
     const MAP_VALUE_TO_LABEL = [
         'VERB' => 'Verbs',
