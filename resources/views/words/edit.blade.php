@@ -9,10 +9,11 @@
                     </h2>                    <form method="POST" action="/words/{{ $word->id }}" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
-                        <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 
-                        <div class="sm:col-span-2">
-                            <label for="term" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">The Term</label>
+                        <div class=" gap-2 sm:grid-cols-2 sm:gap-2">
+
+                            <div class="sm:col-span-2 mt-4 mb-4">
+                                <label for="term" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">The Term</label>
                             <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Please write the term in Arabic letters</p>
                             <input required name="term" id="term" value="{{ old('term', $word->term) }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="أمان">
 
@@ -22,7 +23,8 @@
                         </div>
 
 
-                        <div class="sm:col-span-2">
+                        <div class="sm:col-span-2 mt-4 mb-4">
+
                             <label for="slug" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Prononciation</label>
                             <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Please write the prononciation in Latin letters + numbers (A-Z / 0 -9) </p>
                             <input required name="slug" id="slug" value="{{ old('slug', $word->slug) }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Aman">
@@ -32,11 +34,11 @@
                             @enderror
                         </div>
 
-                        <div class="sm:col-span-2">
+                        <div class="sm:col-span-2 mt-4 mb-4">
 
                             <label for="tifinagh" class="block mb-2 text-sm  font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Tifinagh</label>
-                            <input name="tifinagh" id="tifinagh" value="{{ old('tifinagh', $word->tifinagh) }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ⴰⵎⴰⵏ">
                             <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Not obligation </p>
+                            <input name="tifinagh" id="tifinagh" value="{{ old('tifinagh', $word->tifinagh) }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ⴰⵎⴰⵏ">
 
                             @error("tifinagh")
                                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
@@ -59,17 +61,7 @@
                             @enderror
                         </div>
 
-                        <div>
-                            <label for="countries_multiple" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Select Regions</label>
-                            <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">We will add this soon when we figure out how to do it </p>
-                            <select  disabled id="wilayas_multiple" class="bg-gray-400 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option selected>Not available for now</option>
-                                <option value="US">North</option>
-                                <option value="CA">South</option>
-                                <option value="FR">East</option>
-                                <option value="DE">West</option>
-                            </select>
-                        </div>
+
 
                         <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
                             <ul class=" -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
@@ -105,6 +97,16 @@
                                     @enderror
                             </div>
                         </div>
+
+                        <label for="type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select the type of the word</label>
+                        <select id="type" name="type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected disabled>ex: Verb</option>
+
+                            @foreach(\App\Enums\WordEnum::getKeys() as $key)
+                                <option value="{{ $key }}">{{ \App\Enums\WordEnum::from($key)->label }}</option>
+                            @endforeach
+                        </select>
+
 
                         <div class="sm:col-span-2 my-4">
                             <label for="uses" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Uses ( Optional ) </label>
@@ -146,29 +148,31 @@
                 </div>
 
                 <img src="{{ asset('storage/' . $word->thumbnail) }}" alt="" class="rounded-xl ml-6" width="100">
-            </div> --}}
 
-            {{-- <x-form.textarea name="meaning" required>{{ old('meaning', $word->meaning) }}</x-form.textarea>
-            <x-form.textarea name="exemple" required>{{ old('exemple', $word->exemple) }}</x-form.textarea>
+                {{-- <x-form.textarea name="meaning" required>{{ old('meaning', $word->meaning) }}</x-form.textarea>
+                <x-form.textarea name="exemple" required>{{ old('exemple', $word->exemple) }}</x-form.textarea>
 
-            <x-form.field>
-                <x-form.label name="slang"/>
+                <x-form.field>
+                    <x-form.label name="slang"/>
 
-                <select name="slangs[]" id="slangs" multiple required>
-                    @foreach (\App\Models\Slang::all() as $slang)
+                    <select name="slangs[]" id="slangs" multiple required>
+                        @foreach (\App\Models\Slang::all() as $slang)
                         <option
-                            value="{{ $slang->id }}"
-                            {{ in_array($slang->id, old('slangs', [])) ? 'selected' : '' }}
+                        value="{{ $slang->id }}"
+                        {{ in_array($slang->id, old('slangs', [])) ? 'selected' : '' }}
                         >{{ ucwords($slang->name) }}</option>
-                    @endforeach
-                </select>
+                        @endforeach
+                    </select>
 
-                <x-form.error name="slang"/>
-            </x-form.field> --}}
+                    <x-form.error name="slang"/>
+                </x-form.field> --}}
 
-            <x-form.button>Update</x-form.button>
+                <x-form.button>Update</x-form.button>
+            </div>
+
+
         </form>
-        </div>
     </section>
+
     </x-setting>
 </x-app-layout>

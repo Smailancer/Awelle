@@ -14,14 +14,21 @@
                             </div>
                         </div>
 
-                        <h1 class="font-bold text-3xl lg:text-4xl mb-10" style="font-family: 'Amiri Quran', serif;">
+                        <h1 class="font-bold text-3xl lg:text-4xl mb-6" style="font-family: 'Amiri Quran', serif;">
                             {{ $word->term }}
                         </h1>
 
+                        @if(isset($word->type))
+                            <span class="bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500">
+                                {{ $word->type }}
+                            </span>
+                        @endif
+
                         <p class="mt-4 block mb-10 text-gray-400 text-xl">
-                            <time>{{ $word->slug }} | {{ $word->tifinagh }}</time>
+                            <time>{{ $word->slug }} @isset($word->tifinagh) | {{ $word->tifinagh }} @endisset</time>
                         </p>
 
+                        {{-- <h6 class="text-lg font-bold dark:text-white">{{ $word->type }}</h6> --}}
 
 
                         <div class="mb-4 border-b border-gray-200 dark:border-gray-700">

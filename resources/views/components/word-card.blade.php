@@ -23,7 +23,7 @@
 
 
                     <span class="mt-2 block text-gray-700 text-x">
-                        <h2>{{ $word->slug }} | {{ $word->tifinagh }}</h2>
+                        <h2>{{ $word->slug }} @isset($word->tifinagh) | {{ $word->tifinagh }} @endisset</h2>
                     </span>
                     {{-- <span class="mt-2 block text-gray-400 text-xs">
                         Published <time>{{ $word->created_at->diffForHumans() }}</time>

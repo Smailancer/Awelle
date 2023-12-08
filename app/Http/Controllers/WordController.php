@@ -126,6 +126,7 @@ class WordController extends Controller
             // 'thumbnail' => $word->exists ? ['image'] : ['required', 'image'],
             'slug' => 'required',
             'exemple' => 'nullable',
+            'type' => 'nullable',
             'uses' => 'nullable',
             'tifinagh' => 'nullable|string',
             'ar_meaning' => 'nullable',
