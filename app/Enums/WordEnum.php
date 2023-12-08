@@ -2,8 +2,7 @@
 
 namespace App\Enums;
 
-use Spatie\Enum\Enum;
-
+use Spatie\Enum\Laravel\Enum;
 /**
  * @method static self VERB()
  * @method static self NOUN()

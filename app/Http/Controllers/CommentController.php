@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\word;
+use App\Models\Word;
 use App\Models\comment;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StorecommentRequest;
