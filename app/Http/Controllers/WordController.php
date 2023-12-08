@@ -16,18 +16,22 @@ class WordController extends Controller
      * Display a listing of the resource.
      */
 
+
+
     public function index()
     {
         return view('words.index', [
             'words' => Word::latest()->filter(
                         request(['search', 'slang', 'author'])
-                    )->paginate(9)->withQueryString()
+                    )->paginate(12)->withQueryString()
         ]);
     }
 
+
+
     public function show(Word $word)
 {
-    $wordsWithSameTerm = Word::where('slug', $word->slug)->get();
+    $wordsWithSameTerm = Word::where('term', $word->term)->get();
 
     return view('words.show', [
         'word' => $word,

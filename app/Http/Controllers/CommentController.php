@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\word;
+use App\Models\comment;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StorecommentRequest;
 use App\Http\Requests\UpdatecommentRequest;
-use App\Models\comment;
-use App\Models\word;
 
 class CommentController extends Controller
 {
@@ -32,6 +33,10 @@ class CommentController extends Controller
      */
      public function store(Word $word)
     {
+        if (!Auth::check()) {
+            // Redirect to the login page with a message
+            return redirect()->route('login', ['redirect' => 'words.create'])->with('info', 'Log in to comment or create a new word.');
+        }
         request()->validate([
             'body' => 'required'
         ]);

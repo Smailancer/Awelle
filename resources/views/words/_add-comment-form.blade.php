@@ -1,17 +1,18 @@
-@auth
+{{-- @auth --}}
     <x-panel>
-        <form method="POST" action="/words/{{ $word->slug }}/comments">
+        <form method="POST" action="/words/{{ $word->term }}/comments">
             @csrf
 
             <header class="flex items-center">
-                <img src="{{Auth::user()->gravatar}}"
-                     alt="user photo"
-                     width="40"
-                     height="40"
-                     class="rounded-full">
+                @if(Auth::check())
+                    <img src="{{ Auth::user()->gravatar }}" alt="user photo" width="40" height="40" class="rounded-full">
+                @else
+                    <img src="{{ asset('https://www.gravatar.com/avatar') }}" alt="default gravatar" width="40" height="40" class="rounded-full">
+                @endif
 
-                <h2 class="ml-4">You have more informations ?</h2>
+                <h2 class="ml-4">Do you have any more information?</h2>
             </header>
+
 
             <div class="mt-6">
                 <textarea
@@ -31,9 +32,9 @@
             </div>
         </form>
     </x-panel>
-@else
+{{-- @else
     <p class="font-semibold">
         <a href="/register" class="hover:underline">Register</a> or
         <a href="/login" class="hover:underline">log in</a> to leave a comment.
     </p>
-@endauth
+@endauth --}}

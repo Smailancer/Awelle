@@ -98,8 +98,8 @@
                         </td>
 
                         <td class="px-6 py-4">
-                            <a href="/admin/words/{{ $word->slug }}/edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                            <form method="POST" action="/admin/words/{{ $word->slug }}">
+                            <a href="/admin/words/{{ $word->id }}/edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <form method="POST" action="/words/{{ $word->id }}" onsubmit="return confirm('Are you sure you want to delete this word ?');">
                                 @csrf
                                 @method('DELETE')
 

@@ -6,7 +6,7 @@
                     <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">
                         Edit the word
                         <span class="text-yellow-500">{{$word->term}}</span>
-                    </h2>                    <form method="POST" action="/words/{{ $word->slug }}" enctype="multipart/form-data">
+                    </h2>                    <form method="POST" action="/words/{{ $word->id }}" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
                         <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">

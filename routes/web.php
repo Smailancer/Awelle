@@ -19,11 +19,23 @@ use App\Http\Controllers\AdminWordController;
 
 Route::get('/', [WordController::class, 'index'])->name('home');
 
-Route::resource('words', WordController::class)->parameters(['words' => 'word:slug']);
+
 
 Route::middleware('can:admin')->group(function () {
-    Route::resource('admin/words', AdminWordController::class)->except('show')->parameters(['words' => 'word:slug'])->names('admin.words');
+    Route::resource('admin/words', AdminWordController::class)->except('show')->parameters(['words' => 'word:id'])->names('admin.words');
 });
+
+
+Route::middleware('auth')->group(function () {
+    Route::resource('words', WordController::class)->parameters(['words' => 'word:id'])->except(['show']);
+
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::get('words/{word:term}', [WordController::class, 'show'])->name('words.show');
+
 
 Route::get('/Contact', [ContactController::class, 'show'])->name('contact');
 Route::get('/Tamlab', [WordController::class, 'lab'])->name('TamLab');
@@ -34,7 +46,7 @@ Route::get('/About', [WordController::class, 'about'])->name('About');
 
 
 
-Route::post('words/{word:slug}/comments', [CommentController::class, 'store']);
+Route::post('words/{word:term}/comments', [CommentController::class, 'store']);
 
 // Admin Section
 
@@ -43,10 +55,5 @@ Route::post('words/{word:slug}/comments', [CommentController::class, 'store']);
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
 
 require __DIR__.'/auth.php';
