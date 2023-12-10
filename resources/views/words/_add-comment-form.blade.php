@@ -5,9 +5,17 @@
 
             <header class="flex items-center">
                 @if(Auth::check())
-                    <img src="{{ Auth::user()->gravatar }}" alt="user photo" width="40" height="40" class="rounded-full">
+                    <img src="{{ Auth::user()->gravatar }}" a alt="user photo"
+                    alt="user photo"
+                    width="60"
+                    height="60"
+                    class="rounded-xl">
                 @else
-                    <img src="{{ asset('https://www.gravatar.com/avatar') }}" alt="default gravatar" width="40" height="40" class="rounded-full">
+                    <img src="{{ asset('https://www.gravatar.com/avatar') }}" alt="default gravatar"
+                    alt="user photo"
+                    width="60"
+                    height="60"
+                    class="rounded-xl">
                 @endif
 
                 <h2 class="ml-4">Do you have any more information?</h2>

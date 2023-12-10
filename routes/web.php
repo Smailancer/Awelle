@@ -19,12 +19,9 @@ use App\Http\Controllers\AdminWordController;
 
 Route::get('/', [WordController::class, 'index'])->name('home');
 
-
-
 Route::middleware('can:admin')->group(function () {
     Route::resource('admin/words', AdminWordController::class)->except('show')->parameters(['words' => 'word:id'])->names('admin.words');
 });
-
 
 Route::middleware('auth')->group(function () {
     Route::resource('words', WordController::class)->parameters(['words' => 'word:id'])->except(['show']);
@@ -36,24 +33,23 @@ Route::middleware('auth')->group(function () {
 
 Route::get('words/{word:term}', [WordController::class, 'show'])->name('words.show');
 
-
 Route::get('/Contact', [ContactController::class, 'show'])->name('contact');
 Route::get('/Tamlab', [WordController::class, 'lab'])->name('TamLab');
 Route::get('/Procourt', [WordController::class, 'court'])->name('Procourt');
 Route::get('/Academy', [WordController::class, 'academy'])->name('Academy');
 Route::get('/About', [WordController::class, 'about'])->name('About');
 
+Route::resource('words/{word:term}/comments', CommentController::class)->only(['store', 'update']);
+Route::delete('words/{word}/comments/{comment}', [CommentController::class, 'destroy'])->name('words.comments.destroy');
 
-
-
-Route::post('words/{word:term}/comments', [CommentController::class, 'store']);
+// Route::delete('words/{word:term}/comments/{comment:id}', [CommentController::class, 'destroy']);
 
 // Admin Section
-
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-
 require __DIR__.'/auth.php';
+
+

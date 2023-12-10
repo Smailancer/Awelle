@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Word;
-use App\Models\comment;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StorecommentRequest;
 use App\Http\Requests\UpdatecommentRequest;
@@ -76,8 +76,18 @@ class CommentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(comment $comment)
+    public function destroy(Comment $comment)
     {
-        //
+        // You can use $comment directly since it's already an instance of Comment
+        $comment->delete();
+
+        // Assuming you have a relationship defined in the Comment model to get the associated word
+        $word = $comment->word;
+
+        // Redirect to the word's show route
+        return redirect()->route('words.show', $word)->with('success', 'Comment deleted successfully.');
     }
+
+
+
 }

@@ -13,14 +13,18 @@
             </a> --}}
             <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-4">Vision</h1>
             <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-8">A site for documenting and developing the Algerian tangible and intangible heritage, starting from the dialects of each society, to the food and the way it is prepared, to clothing, wedding traditions, parties, songs, and artistic production.</p> </p>
-            {{-- <a href="#" class="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+
+
+            {{-- <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-4">Development</h1>
+            <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-8">A site for documenting and developing the Algerian tangible and intangible heritage, starting from the dialects of each society, to the food and the way it is prepared, to clothing, wedding traditions, parties, songs, and artistic production.</p> </p> --}}
+            <a href="#" class="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                 Read more
                 <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                 </svg>
-            </a> --}}
+            </a>
         </div>
-        {{-- <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-2 gap-8">
             <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
                 <a href="#" class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
                     <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
@@ -51,7 +55,7 @@
                     </svg>
                 </a>
             </div>
-        </div> --}}
+        </div>
     </div>
 </section>
 

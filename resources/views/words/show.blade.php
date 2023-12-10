@@ -116,7 +116,7 @@
             @if($word->comments->count())
                 <h2 class="text-4xl font-bold dark:text-white">Comments :</h2>
                 @foreach ($word->comments as $comment)
-                    <x-word-comment :comment="$comment"/>
+                    <x-word-comment :comment="$comment" :word="$word"/>
                 @endforeach
             @endif
         </section>
