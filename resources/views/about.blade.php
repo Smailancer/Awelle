@@ -17,14 +17,14 @@
 
             {{-- <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-4">Development</h1>
             <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-8">A site for documenting and developing the Algerian tangible and intangible heritage, starting from the dialects of each society, to the food and the way it is prepared, to clothing, wedding traditions, parties, songs, and artistic production.</p> </p> --}}
-            <a href="#" class="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+            {{-- <a href="#" class="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                 Read more
                 <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                 </svg>
-            </a>
+            </a> --}}
         </div>
-        <div class="grid md:grid-cols-2 gap-8">
+        {{-- <div class="grid md:grid-cols-2 gap-8">
             <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
                 <a href="#" class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
                     <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
@@ -39,24 +39,70 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                 </svg>
                 </a>
-            </div>
+            </div> --}}
             <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
-                <a href="#" class="bg-purple-100 text-purple-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-purple-400 mb-2">
+                <a href="#" class="bg-purple-300 text-purple-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-purple-400 mb-2">
                     <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"/>
                     </svg>
-                    Code
+                    13/12/2023
                 </a>
-                <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Best react libraries around the web</h2>
-                <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers.</p>
-                <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">Read more
+                <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Updates :</h2>
+                <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
+
+                    <ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+                        <li class="line-through decoration-yellow-300">Activate the Type field for words and use Enums.</li>
+                        <li class="line-through decoration-yellow-300">Revamp the display of words, avoiding reliance on slugs in URLs and not making them unique due to many similar words in writing and pronunciation.</li>
+                        <li >Fuzzy search for words without diacritics (Fuzzy Search).</li>
+                        <li>Ability to filter words that match in multiple dialects.</li>
+                        <li class="line-through decoration-yellow-300">Return to the previous page after logging in.</li>
+                        <li class="line-through decoration-yellow-300">Add a list of future features on the About page.</li>
+                        <li class="line-through decoration-yellow-300">Filter by word type</li>
+                        <li>Add a new field for suggested edits on the About page.</li>
+                        <li>Table of suggestions dedicated to two features: word edit suggestions and suggestions for new features on the About page.</li>
+                        <li>Ability to edit and delete comments by the author and the administrator.</li>
+                        <li class="line-through decoration-yellow-300">Activate the comments section.</li>
+                        <li class="line-through decoration-yellow-300">Programming the Import feature to import Excel files specifically for words.</li>
+                        <li class="line-through decoration-yellow-300">Add Shilha language.</li>
+                        <li class="line-through decoration-yellow-300">Quick add button for words on all pages.</li>
+                        <li class="line-through decoration-yellow-300">Problem creating and editing words without logging in.</li>
+                        <li class="line-through decoration-yellow-300">Ability to edit words and fix the slug issue.</li>
+                        <li class="line-through decoration-yellow-300">Add a field for Tifinagh.</li>
+                        <li>Indicate the number of words added on the homepage.</li>
+                        <li>Think of a solution to group and feminize names, as well as tenses and verb conjugation with pronouns.</li>
+                        <li>Think about the appropriate number of words displayed on the homepage.</li>
+                        <li>Pagination for words in the admin panel.</li>
+                        <li>Activate password reset functionality.</li>
+                        <li>Add a section to the admin control panel for managing words for each user to manage their words.</li>
+                        <li class="line-through decoration-yellow-300">Final modification to layout vs app to solve the small screen issue.</li>
+                        <li>Night mode.</li>
+                        <li>Activate the contact us form.</li>
+                        <li>Activate the mailing list.</li>
+                        <li>Add a filter to display matching words in more than one dialect (Edit in the search list only and make it multi-select).</li>
+                    </ul>
+
+
+                </p>
+                {{-- <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">Read more
                     <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                     </svg>
-                </a>
+                </a> --}}
+
+                <form>
+
+
+                    <div class="mb-6 mt-10">
+                    <h3 class="text-xl font-bold dark:text-white mb-5">Seggest new features to add to the list :</h3>
+                    <input type="text" id="success" class="bg-green-50 border border-green-500 text-green-900 dark:text-green-400 placeholder-green-700 dark:placeholder-green-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500" placeholder="New Idea">
+                    <p class="mt-2 text-sm text-red-600 dark:text-green-red"><span class="font-medium">Not available for now!</span> .</p>
+                  </div>
+                </form>
             </div>
+
         </div>
     </div>
+
 </section>
 
 </x-app-layout>

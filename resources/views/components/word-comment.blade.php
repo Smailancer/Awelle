@@ -15,6 +15,10 @@
             <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
                     title="February 8th, 2022">Feb. 8, 2022</time></p>
         </div>
+
+@auth
+
+
         <button id="dropdownComment1Button-{{ $comment->id }}" data-dropdown-toggle="dropdownComment1-{{ $comment->id }}"
             class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 dark:text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             type="button">
@@ -33,25 +37,31 @@
                         class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
                 </li>
                 <li>
-                    <a href="#"
-                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove
-                    </a>
-                </li>
-                <li>
-                    <form method="POST" action="{{ route('words.comments.destroy', ['word' => $word->term, 'comment' => $comment->id]) }}" onsubmit="return confirm('Are you sure you want to delete this comment?');">
+                    <form id="deleteCommentForm" method="POST" action="/words/{{ $word->term }}/comments/{{ $comment->id }}" onsubmit="return false;">
                         @csrf
                         @method('DELETE')
-
-                        <button type="submit" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Delete</button>
+                        <a href="#" onclick="confirmDelete()" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Delete</a>
                     </form>
+
+                    <script>
+                        function confirmDelete() {
+                            if (confirm('Are you sure you want to delete this comment?')) {
+                                document.getElementById('deleteCommentForm').submit();
+                            }
+                        }
+                    </script>
+
+                </li>
+                <li>
 
                     <a href="#"
                         class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
                 </li>
             </ul>
         </div>
+        @endauth
     </footer>
-    <p class="text-gray-500 dark:text-gray-400">{{ $comment->body }}</p>
+    <p class="text-gray-500 dark:text-gray-400 ml-10">{{ $comment->body }}</p>
 </article>
 
 

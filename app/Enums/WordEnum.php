@@ -15,11 +15,9 @@ use Spatie\Enum\Laravel\Enum;
  * @method static self QUESTION_WORD()
  * @method static self COLOR()
  * @method static self FAMILY_TERM()
- * @method static self DAYS_MONTHS()
  * @method static self TIME_EXPRESSION()
  * @method static self COMMON_ADVERB()
- * @method static self GEOGRAPHICAL_TERM()
- * @method static self ANIMAL_PLANT()
+ * @method static self ANIMAL_NATURE()
  * @method static self FOOD_DRINK()
  * @method static self BODY_PART()
  * @method static self COMMON_TOOL_OBJECT()
@@ -40,16 +38,14 @@ final class WordEnum extends Enum
         'QUESTION_WORD' => 'Question Words',
         'COLOR' => 'Colors',
         'FAMILY_TERM' => 'Family Terms',
-        'DAYS_MONTHS' => 'Days of the Week and Months',
         'TIME_EXPRESSION' => 'Time Expressions',
+        'PLACE_EXPRESSION' => 'Place Expressions',
         'COMMON_ADVERB' => 'Common Adverbs',
-        'GEOGRAPHICAL_TERM' => 'Geographical Terms',
-        'ANIMAL_PLANT' => 'Animals and Plants',
+        'ANIMAL_NATURE' => 'Animals and Nature',
         'FOOD_DRINK' => 'Food and Drinks',
         'BODY_PART' => 'Body Parts',
         'COMMON_TOOL_OBJECT' => 'Common Tools and Objects',
         'FEELINGS_EMOTIONS' => 'Feelings and Emotions',
-        'PLACE_EXPRESSION' => 'Place Expressions',
     ];
 
        /**

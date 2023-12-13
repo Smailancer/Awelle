@@ -19,9 +19,9 @@
                         </h1>
 
                         @if(isset($word->type))
-                            <span class="bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500">
-                                {{ $word->type }}
-                            </span>
+                        <a class="bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500" href="/?type={{ $word->type }}"> {{ $word->type }}</a>
+
+
                         @endif
 
                         <p class="mt-4 block mb-10 text-gray-400 text-xl">

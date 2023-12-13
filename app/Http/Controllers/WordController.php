@@ -22,7 +22,7 @@ class WordController extends Controller
     {
         return view('words.index', [
             'words' => Word::latest()->filter(
-                        request(['search', 'slang', 'author'])
+                        request(['search', 'slang', 'author','type'])
                     )->paginate(12)->withQueryString()
         ]);
     }

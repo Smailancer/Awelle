@@ -39,6 +39,13 @@ class Word extends Model
                 $query->where('username', $author)
             )
         );
+
+
+        $query->when($filters['type'] ?? false, fn($query, $type) =>
+        $query->where('type', $type)
+    );
+
+
     }
 
     public function comments()
