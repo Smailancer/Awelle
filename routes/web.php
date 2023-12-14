@@ -24,17 +24,14 @@ Route::middleware('can:admin')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::resource('words', WordController::class)->parameters(['words' => 'word:id'])->except(['show']);
 
     Route::delete('words/{word:term}/comments/{comment}', [CommentController::class, 'destroy'])->name('words.comments.destroy');
-    Route::resource('words/{word:term}/comments', CommentController::class)->only(['store', 'update']);
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('words/{word:term}', [WordController::class, 'show'])->name('words.show');
 
 Route::get('/Contact', [ContactController::class, 'show'])->name('contact');
 Route::get('/Tamlab', [WordController::class, 'lab'])->name('TamLab');
@@ -43,7 +40,11 @@ Route::get('/Academy', [WordController::class, 'academy'])->name('Academy');
 Route::get('/About', [WordController::class, 'about'])->name('About');
 
 
-// Route::delete('words/{word:term}/comments/{comment:id}', [CommentController::class, 'destroy']);
+Route::resource('words', WordController::class)->parameters(['words' => 'word:id'])->except(['show']);
+Route::get('words/{word:term}', [WordController::class, 'show'])->name('words.show');
+
+
+Route::resource('words/{word:term}/comments', CommentController::class)->only(['store', 'update']);
 
 // Admin Section
 

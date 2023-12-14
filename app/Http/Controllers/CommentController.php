@@ -36,7 +36,7 @@ class CommentController extends Controller
     {
         if (!Auth::check()) {
             // Redirect to the login page with a message
-            return redirect()->route('login', ['redirect' => 'words.create'])->with('info', 'Log in to comment or create a new word.');
+            return redirect()->route('login', ['redirect' => 'words.create'])->with('info', 'Log in to write a comment .');
         }
         request()->validate([
             'body' => 'required'
