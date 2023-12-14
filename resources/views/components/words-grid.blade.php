@@ -1,6 +1,6 @@
 @props(['words'])
 
-<div class="lg:grid lg:grid-cols-3">
+<div class="lg:grid lg:grid-cols-4">
 
     {{-- Pin specific words by their slugs --}}
     @foreach (['awelle', 'Adhlamdagh', 'taghenjayt'] as $pinnedSlug)

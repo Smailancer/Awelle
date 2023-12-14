@@ -27,7 +27,8 @@
                     name="body"
                     class="w-full text-sm focus:outline-none focus:ring "
                     rows="5"
-                    placeholder="Comments are disabled for now"
+                    placeholder="Say something you know about the term"
+
                     required></textarea>
 
                 @error('body')
