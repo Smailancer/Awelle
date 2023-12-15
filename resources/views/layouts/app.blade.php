@@ -148,8 +148,8 @@
                 <li>ǧ (ج) - ينطق كحرف الجيم</li>
                 <li>ḥ (ح) - ينطق كحرف الحاء</li>
                 <li>ɣ (غ) - ينطق كحرف الغين</li>
-                <li>ṛ (َر) - ينطق كحرف راء مغلظة</li>
-                <li>ṣ (ص) - ينطث كحرف الصاد</li>
+                <li>ṛ (َر) - ينطق كراء مغلظة</li>
+                <li>ṣ (ص) - ينطق كحرف الصاد</li>
                 <li>ṭ (ط) - ينطق كحرف الطاء</li>
                 <li>ẓ (ظ) - ينطق كحرف الظاء</li>
                 <li>ɛ (ع) - ينطق كحرف العين</li>
@@ -161,7 +161,7 @@
                 <li>پ (p) - ينطق مثل الحرف اللاتيني P</li>
                 <li>گ (ga) -  Representing the sound "g" as in "go," this character is used in Kurdish and other languages.</li>
                 <li>ڤ (v) -  ينطق مثل الحرف اللاتيني V</li>
-                <li>ݣ (ga with three dots) - Representing the sound "g" as in "goal," this character is used in some North African languages.</li>
+                <li>ݣ (ga) - Representing the sound "g" as in "goal," this character is used in some North African languages.</li>
             </ul>
 
 
