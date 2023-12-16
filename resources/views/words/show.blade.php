@@ -25,7 +25,7 @@
                         @endif
 
                         <p class="mt-4 block mb-10 text-gray-400 text-xl">
-                            <time>{{ $word->slug }} @isset($word->tifinagh) | {{ $word->tifinagh }} @endisset</time>
+                            <time>{{ $word->spell }} @isset($word->tifinagh) | {{ $word->tifinagh }} @endisset</time>
                         </p>
 
                         {{-- <h6 class="text-lg font-bold dark:text-white">{{ $word->type }}</h6> --}}

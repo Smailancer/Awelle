@@ -159,9 +159,8 @@
             <ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
                 <li>چ (ch) - ج بثلاث نقط ينطق تشا  </li>
                 <li>پ (p) - ينطق مثل الحرف اللاتيني P</li>
-                <li>گ (ga) -  Representing the sound "g" as in "go," this character is used in Kurdish and other languages.</li>
+                <li>ݣ/گ (ga) ينطق كالجيم المصرية G </li>
                 <li>ڤ (v) -  ينطق مثل الحرف اللاتيني V</li>
-                <li>ݣ (ga) - Representing the sound "g" as in "goal," this character is used in some North African languages.</li>
             </ul>
 
 
@@ -172,6 +171,8 @@
           </svg></a> --}}
            </div>
         </div>
+
+
 
         @include('layouts.footer')
 

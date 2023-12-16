@@ -30,7 +30,7 @@ class WordFactory extends Factory
             'user_id' => User::factory(),
             // 'slang_id' => Slang::factory(),
             'term' => $this->faker->sentence(),
-            'slug' => $this->faker->slug(),
+            'spell' => $this->faker->slug(),
             'tifinagh' => $this->faker->slug(),
             'exemple' =>  $this->faker->paragraph(3),
             'ar_meaning' =>  $this->faker->paragraph(2),

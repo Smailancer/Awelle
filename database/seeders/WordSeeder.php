@@ -23,7 +23,7 @@ class WordSeeder extends Seeder
         $wordsData = array_map('str_getcsv', file($csvFile));
 
         foreach ($wordsData as $row) {
-            list($term, $slug, $ar_meaning, $slangName) = $row;
+            list($term,$standard, $spell, $ar_meaning, $slangName) = $row;
 
             // Find or create slang
             $slang = Slang::where('name', $slangName)->first();
@@ -36,7 +36,8 @@ class WordSeeder extends Seeder
             Word::create([
                 'user_id' => $user->id,
                 'term' => $term,
-                'slug' => $slug,
+                'standard' => $standard,
+                'spell' => $spell,
                 'ar_meaning' => $ar_meaning,
             ])->slang()->attach($slang->id);
 

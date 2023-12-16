@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Word;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class AdminWordController extends Controller
 {
@@ -31,11 +32,20 @@ class AdminWordController extends Controller
 
     public function edit(Word $word)
     {
+    if (!Auth::check()) {
+            // Redirect to the login page with a message
+            return redirect()->route('login', ['redirect' => 'words.create'])->with('info', 'Log in to create a new word.');
+        }
         return view('words.edit', ['word' => $word]);
     }
 
     public function update(Word $word)
     {
+
+    if (!Auth::check()) {
+            // Redirect to the login page with a message
+            return redirect()->route('login', ['redirect' => 'words.create'])->with('info', 'Log in to create a new word.');
+        }
         $attributes = $this->validateWord($word);
 
         // if ($attributes['thumbnail'] ?? false) {
@@ -49,6 +59,10 @@ class AdminWordController extends Controller
 
     public function destroy(Word $word)
     {
+        if (!Auth::check()) {
+            // Redirect to the login page with a message
+            return redirect()->route('login', ['redirect' => 'words.create'])->with('info', 'Log in to create a new word.');
+        }
         $word->delete();
 
         return back()->with('success', 'Word Deleted!');
@@ -61,7 +75,7 @@ class AdminWordController extends Controller
         return request()->validate([
             'term' => 'required',
             // 'thumbnail' => $word->exists ? ['image'] : ['required', 'image'],
-            'slug' => 'required',
+            'spell' => 'required',
             'exemple' => 'nullable',
             'type' => 'nullable',
             'uses' => 'nullable',

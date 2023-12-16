@@ -12,21 +12,25 @@ use App\Models\Comment;
 class Word extends Model
 {
     use HasFactory;
-    //  protected $with = ['slang', 'author'];
 
     public function scopeFilter($query, array $filters)
     {
-        $query->when($filters['search'] ?? false, fn($query, $search) =>
-            $query->where(fn($query) =>
-                $query->where('term', 'like', '%' . $search . '%')
-                    ->orWhere('ar_meaning', 'like', '%' . $search . '%')
-                    ->orWhere('fr_meaning', 'like', '%' . $search . '%')
-                    ->orWhere('en_meaning', 'like', '%' . $search . '%')
-                    ->orWhere('tifinagh', 'like', '%' . $search . '%')
-                    ->orWhere('uses', 'like', '%' . $search . '%')
-                    ->orWhere('slug', 'like', '%' . $search . '%')
-            )
-        );
+        $query->when($filters['search'] ?? false, function ($query, $search) {
+            $collation = 'utf8mb4_general_ci';
+
+            // Apply the removeDiacriticsAndAlef function to the search term
+            $filteredSearch = $this->removeDiacriticsAndAlef($search);
+
+            $query->where(function ($query) use ($filteredSearch, $collation) {
+                $query->whereRaw("standard COLLATE $collation LIKE ?", ['%' . $filteredSearch . '%'])
+                      ->orWhereRaw("ar_meaning COLLATE $collation LIKE ?", ['%' . $filteredSearch . '%'])
+                      ->orWhereRaw("fr_meaning COLLATE $collation LIKE ?", ['%' . $filteredSearch . '%'])
+                      ->orWhereRaw("en_meaning COLLATE $collation LIKE ?", ['%' . $filteredSearch . '%'])
+                      ->orWhereRaw("tifinagh COLLATE $collation LIKE ?", ['%' . $filteredSearch . '%'])
+                      ->orWhereRaw("uses COLLATE $collation LIKE ?", ['%' . $filteredSearch . '%'])
+                      ->orWhereRaw("spell COLLATE $collation LIKE ?", ['%' . $filteredSearch . '%']);
+            });
+        });
 
         $query->when($filters['slang'] ?? false, fn($query, $slang) =>
             $query->whereHas('slang', fn ($query) =>
@@ -40,20 +44,15 @@ class Word extends Model
             )
         );
 
-
         $query->when($filters['type'] ?? false, fn($query, $type) =>
-        $query->where('type', $type)
-    );
-
-
+            $query->where('type', $type)
+        );
     }
 
     public function comments()
     {
         return $this->hasMany(Comment::class);
     }
-
-   // Word.php
 
     public function slang()
     {
@@ -69,4 +68,16 @@ class Word extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function removeDiacriticsAndAlef($string)
+    {
+        // Remove diacritics
+        $string = preg_replace("~[\x{064B}-\x{065B}]~u", "", $string);
+
+        // Replace أ and آ with ا
+        $string = preg_replace(["/أ/u", "/آ/u"], "ا", $string);
+
+        return $string;
+    }
+
 }

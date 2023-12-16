@@ -16,13 +16,14 @@ use Spatie\Enum\Laravel\Enum;
  * @method static self COLOR()
  * @method static self FAMILY_TERM()
  * @method static self TIME_EXPRESSION()
+ * @method static self PLACE_EXPRESSION()
  * @method static self COMMON_ADVERB()
  * @method static self ANIMAL_NATURE()
  * @method static self FOOD_DRINK()
  * @method static self BODY_PART()
  * @method static self COMMON_TOOL_OBJECT()
  * @method static self FEELINGS_EMOTIONS()
- * @method static self PLACE_EXPRESSION()
+ * @method static self MEMES()
  */
 final class WordEnum extends Enum
 {
@@ -46,6 +47,7 @@ final class WordEnum extends Enum
         'BODY_PART' => 'Body Parts',
         'COMMON_TOOL_OBJECT' => 'Common Tools and Objects',
         'FEELINGS_EMOTIONS' => 'Feelings and Emotions',
+        'MEMES' => 'Memes',
     ];
 
        /**

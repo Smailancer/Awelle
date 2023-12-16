@@ -16,6 +16,7 @@ use App\Http\Controllers\AdminWordController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/test-normalization', [WordController::class, 'testNormalization']);
 
 Route::get('/', [WordController::class, 'index'])->name('home');
 
@@ -39,8 +40,8 @@ Route::get('/Procourt', [WordController::class, 'court'])->name('Procourt');
 Route::get('/Academy', [WordController::class, 'academy'])->name('Academy');
 Route::get('/About', [WordController::class, 'about'])->name('About');
 
-
 Route::resource('words', WordController::class)->parameters(['words' => 'word:id'])->except(['show']);
+
 Route::get('words/{word:term}', [WordController::class, 'show'])->name('words.show');
 
 

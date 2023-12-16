@@ -25,11 +25,11 @@
 
                         <div class="sm:col-span-2 mt-4 mb-4">
 
-                            <label for="slug" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Prononciation</label>
+                            <label for="spell" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Prononciation</label>
                             <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Please write the prononciation in Latin letters + numbers (A-Z / 0 -9) </p>
-                            <input required name="slug" id="slug" value="{{ old('slug', $word->slug) }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Aman">
+                            <input required name="spell" id="spell" value="{{ old('spell', $word->spell) }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Aman">
 
-                            @error("slug")
+                            @error("spell")
                                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                             @enderror
                         </div>

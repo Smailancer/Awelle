@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Word;
 use Illuminate\Support\Arr;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StorewordRequest;
 use App\Http\Requests\UpdatewordRequest;
+use Symfony\Polyfill\Intl\Normalizer\Normalizer;
 
 
 class WordController extends Controller
@@ -15,8 +17,6 @@ class WordController extends Controller
     /**
      * Display a listing of the resource.
      */
-
-
 
     public function index()
     {
@@ -53,30 +53,47 @@ class WordController extends Controller
     }
 
     public function store()
-    {
-
-        $attributes = array_merge($this->validateWord(), [
-            'user_id' => request()->user()->id,
-        ]);
-
-        // Create the word without the slangs
-        $word = Word::create(Arr::except($attributes, 'slangs'));
-
-        // Attach selected slangs to the word
-        $word->slang()->attach(request('slangs'));
-
-        return redirect(route('home'))->with('success', 'Word Created!');
-
+{
+    if (!Auth::check()) {
+        // Redirect to the login page with a message
+        return redirect()->route('login', ['redirect' => 'words.create'])->with('info', 'Log in to create a new word.');
     }
+
+    $attributes = $this->validateWord();
+    $attributes['user_id'] = request()->user()->id;
+
+    // Create an instance of the Word model
+    $wordModel = new Word();
+
+    // Remove diacritics and أ from the term before storing
+    $attributes['standard'] = $wordModel->removeDiacriticsAndAlef($attributes['term']);
+
+    // Create the word without the slangs
+    $word = Word::create(Arr::except($attributes, 'slangs'));
+
+    // Attach selected slangs to the word
+    $word->slang()->attach(request('slangs'));
+
+    return redirect(route('home'))->with('success', 'Word Created!');
+}
+
+
 
     public function edit(Word $word)
     {
+        if (!Auth::check()) {
+            // Redirect to the login page with a message
+            return redirect()->route('login', ['redirect' => 'words.create'])->with('info', 'Log in to create a new word.');
+        }
         return view('words.edit', ['word' => $word]);
     }
 
     public function update(Word $word)
     {
-
+        // if (!Auth::check()) {
+        //     // Redirect to the login page with a message
+        //     return redirect()->route('login', ['redirect' => 'words.create'])->with('info', 'Log in to create a new word.');
+        // }
         $attributes = $this->validateWord($word);
 
         // Update the word without updating the slangs
@@ -124,7 +141,7 @@ class WordController extends Controller
         return request()->validate([
             'term' => 'required',
             // 'thumbnail' => $word->exists ? ['image'] : ['required', 'image'],
-            'slug' => 'required',
+            'spell' => 'required',
             'exemple' => 'nullable',
             'type' => 'nullable',
             'uses' => 'nullable',

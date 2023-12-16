@@ -37,7 +37,8 @@ class WordPolicy
      */
     public function update(User $user, word $word): bool
     {
-        //
+        return $user->id === $word->user_id || $user->isAdmin();
+
     }
 
     /**
@@ -45,7 +46,8 @@ class WordPolicy
      */
     public function delete(User $user, word $word): bool
     {
-        //
+        return $user->id === $word->user_id || $user->isAdmin();
+
     }
 
     /**

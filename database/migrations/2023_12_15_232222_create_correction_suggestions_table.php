@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('words', function (Blueprint $table) {
+        Schema::create('correction_suggestions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->string('term');
-            $table->string('standard');
-            $table->string('spell');
+            $table->foreignId('word_id')->constrained()->cascadeOnDelete();
+            $table->string('term')->nullable();
+            $table->string('standard')->nullable();
+            $table->string('spell')->nullable();
             $table->string('tifinagh')->nullable();
             $table->string('type')->nullable();
             $table->text('uses')->nullable();
@@ -24,7 +25,7 @@ return new class extends Migration
             $table->text('fr_meaning')->nullable();
             $table->text('en_meaning')->nullable();
             $table->text('exemple')->nullable();
-            $table->binary('audio')->nullable(); // Assuming BLOB for audio
+            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
             $table->timestamps();
         });
     }
@@ -34,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('words');
+        Schema::dropIfExists('correction_suggestions');
     }
 };
