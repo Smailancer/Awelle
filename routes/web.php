@@ -42,6 +42,9 @@ Route::get('/About', [WordController::class, 'about'])->name('About');
 
 Route::resource('words', WordController::class)->parameters(['words' => 'word:id'])->except(['show']);
 
+Route::get('words/{word}/suggest-correction', [WordController::class, 'suggestCorrection'])->name('words.suggestCorrection');
+Route::post('words/{word}/storeCorrectionSuggestion', [WordController::class, 'storeCorrectionSuggestion'])->name('words.suggest-correction');
+
 Route::get('words/{word:term}', [WordController::class, 'show'])->name('words.show');
 
 
