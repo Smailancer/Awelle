@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('spell')->nullable();
             $table->string('tifinagh')->nullable();
             $table->string('type')->nullable();
+            $table->json('slangs')->nullable();
             $table->text('uses')->nullable();
             $table->text('ar_meaning')->nullable();
             $table->text('fr_meaning')->nullable();

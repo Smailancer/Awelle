@@ -22,6 +22,11 @@ Route::get('/', [WordController::class, 'index'])->name('home');
 
 Route::middleware('can:admin')->group(function () {
     Route::resource('admin/words', AdminWordController::class)->except('show')->parameters(['words' => 'word:id'])->names('admin.words');
+
+
+    Route::get('admin/correction-suggestions', [AdminWordController::class, 'showCorrectionSuggestions'])->name('admin.words.correctionSuggestions');
+    Route::post('admin/correction-suggestions/{suggestion}', [AdminWordController::class, 'processCorrection'])->name('admin.words.processCorrection');
+
 });
 
 Route::middleware('auth')->group(function () {
@@ -41,6 +46,9 @@ Route::get('/Academy', [WordController::class, 'academy'])->name('Academy');
 Route::get('/About', [WordController::class, 'about'])->name('About');
 
 Route::resource('words', WordController::class)->parameters(['words' => 'word:id'])->except(['show']);
+
+Route::get('words/{word}/suggest-correction', [WordController::class, 'suggestCorrection'])->name('words.suggestCorrection');
+Route::post('words/{word}/storeCorrectionSuggestion', [WordController::class, 'storeCorrectionSuggestion'])->name('words.suggest-correction');
 
 Route::get('words/{word:term}', [WordController::class, 'show'])->name('words.show');
 

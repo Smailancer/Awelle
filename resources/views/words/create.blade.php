@@ -8,11 +8,11 @@
         <form method="POST" action="/words" enctype="multipart/form-data">
             @csrf
             {{-- <div class="grid gap-4 sm:grid-cols-2 sm:gap-6"> --}}
-                <div class="sm:col-span-2">
+                <div class="sm:col-span-2 mb-5">
 
-                    <label for="term" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">The Term<span class="text-red-500 font-bold text-lg">*</span></label>
-                    <input required name="term" id="term" value="{{ old('term') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="أمان">
-                    <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Please write the term in arabic letters</p>
+                    <label for="term" class="block mt-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">The Term<span class="text-red-500 font-bold text-lg">*</span></label>
+                    <p id="helper-text-explanation" class="text-sm text-gray-500 dark:text-gray-400">Please write the term in arabic letters with diactrics "المصطلح بالتشكيل"</p>
+                    <input required name="term" id="term" value="{{ old('term') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="أَوَالْ">
 
                     @error("term")
                         <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
@@ -20,22 +20,22 @@
 
                 </div>
 
-                <div class="sm:col-span-2">
+                <div class="sm:col-span-2 mb-5">
 
-                    <label for="spell" class="block mb-2 text-sm  font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Prononciation<span class="text-red-500 font-bold text-lg">*</span></label>
-                    <input required name="spell" id="spell" value="{{ old('spell') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Aman">
-                    <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Please write the prononciation in latin letters + numbers (A-Z / 0 -9) </p>
+                    <label for="spell" class="block mb-2 mt-2  text-sm  font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Prononciation<span class="text-red-500 font-bold text-lg">*</span></label>
+                    <p id="helper-text-explanation" class=" text-sm text-gray-500 dark:text-gray-400">Please write the prononciation in latin letters + numbers (A-Z / 0 -9) </p>
+                    <input required name="spell" id="spell" value="{{ old('spell') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Awelle">
 
                     @error("spell")
                         <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                     @enderror
                 </div>
 
-                <div class="sm:col-span-2">
+                <div class="sm:col-span-2 mb-5">
 
-                    <label for="tifinagh" class="block mb-2 text-sm  font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Tifinagh</label>
-                    <input name="tifinagh" id="tifinagh" value="{{ old('tifinagh') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ⴰⵎⴰⵏ">
-                    <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Not obligation </p>
+                    <label for="tifinagh" class="block mb-2  mt-2 text-sm  font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Tifinagh</label>
+                    <p id="helper-text-explanation" class=" text-sm text-gray-500 dark:text-gray-400">Not obligation </p>
+                    <input name="tifinagh" id="tifinagh" value="{{ old('tifinagh') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ⴰⵡⴰⵍ">
 
                     @error("tifinagh")
                         <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
@@ -44,7 +44,7 @@
 
 
                 <div>
-                    <label for="slangs" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Slang <span class="text-red-500 font-bold text-lg">*</span></label>
+                    <label for="slangs" class="block mb-2 mt-2  text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Slang <span class="text-red-500 font-bold text-lg">*</span></label>
                     <select multiple required name="slangs[]" id="slangs" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                         @foreach (\App\Models\Slang::all() as $slang)
                             <option
@@ -64,7 +64,7 @@
 {{-- ----- --}}
 
 
-                <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+                <div class="mb-5 border-b border-gray-200 dark:border-gray-700">
                     <ul class=" -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
                         <li class="me-2" role="presentation">
                             <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Arabic meaning</button>
@@ -77,7 +77,7 @@
                         </li>
                     </ul>
                 </div>
-                <div id="default-tab-content">
+                <div id="default-tab-content mb-5">
                     <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <label for="ar_meaning" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">المعنى بالعربية<span class="text-red-500 font-bold text-lg">*</span></label>
                         <textarea  name="ar_meaning" id="ar_meaning" required rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="الماء"></textarea>

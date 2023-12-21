@@ -69,6 +69,11 @@ class Word extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function correctionSuggestions()
+    {
+        return $this->hasMany(CorrectionSuggestion::class);
+    }
+
     public function removeDiacriticsAndAlef($string)
     {
         // Remove diacritics

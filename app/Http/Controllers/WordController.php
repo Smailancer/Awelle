@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\Word;
 use Illuminate\Support\Arr;
 use Illuminate\Validation\Rule;
+use App\Models\CorrectionSuggestion;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StorewordRequest;
 use App\Http\Requests\UpdatewordRequest;
@@ -30,14 +31,19 @@ class WordController extends Controller
 
 
     public function show(Word $word)
-{
-    $wordsWithSameTerm = Word::where('term', $word->term)->get();
+    {
+        $wordsWithSameTerm = Word::where('term', $word->term)->get();
 
-    return view('words.show', [
-        'word' => $word,
-        'wordsWithSameTerm' => $wordsWithSameTerm,
-    ]);
-}
+        $correctionSuggestions = CorrectionSuggestion::where('word_id', $word->id)
+            ->where('status', 'pending') // You might want to adjust this based on your workflow
+            ->get();
+
+        return view('words.show', [
+            'word' => $word,
+            'wordsWithSameTerm' => $wordsWithSameTerm,
+            'correctionSuggestions' => $correctionSuggestions,
+        ]);
+    }
 
 
     /**
@@ -51,6 +57,8 @@ class WordController extends Controller
         }
         return view('words.create');
     }
+
+
 
     public function store()
 {
@@ -134,6 +142,50 @@ class WordController extends Controller
     }
 
 
+    public function suggestCorrection(Word $word)
+    {
+        if (!Auth::check()) {
+            // Redirect to the login page with a message
+            return redirect()->route('login', ['redirect' => 'words.show', 'word' => $word->id])
+                ->with('info', 'Log in to suggest a correction.');
+        }
+
+        return view('words.suggest-correction', ['word' => $word]);
+    }
+
+    public function storeCorrectionSuggestion(Word $word)
+    {
+        // Check if the user is authenticated
+        if (!Auth::check()) {
+            return redirect()->route('login', ['redirect' => 'words.show', 'word' => $word->id])
+                ->with('info', 'Log in to suggest a correction.');
+        }
+
+        // Validate the input using the validateWord method with only necessary fields
+        $attributes = $this->validateWord($word);
+        $attributes['user_id'] = request()->user()->id;
+        $attributes['word_id'] = $word->id;
+
+        // Create an instance of the CorrectionSuggestion model
+        $wordModel = new CorrectionSuggestion();
+
+        // Remove diacritics and أ from the term before storing
+        $attributes['standard'] = $wordModel->removeDiacriticsAndAlef($attributes['term']);
+
+        // Convert slang_ids to JSON before storing
+        $attributes['slangs'] = json_encode(request('slangs'));
+
+        // Create the correction suggestion
+        $correction = CorrectionSuggestion::create($attributes);
+
+        // Redirect to the word show page with a success message
+        return redirect()->route('words.show', $word)->with('success', 'Correction suggestion submitted.');
+    }
+
+
+
+
+
     protected function validateWord(?Word $word = null): array
     {
         $word ??= new Word();
@@ -142,14 +194,14 @@ class WordController extends Controller
             'term' => 'required',
             // 'thumbnail' => $word->exists ? ['image'] : ['required', 'image'],
             'spell' => 'required',
-            'exemple' => 'nullable',
-            'type' => 'nullable',
-            'uses' => 'nullable',
             'tifinagh' => 'nullable|string',
+            'type' => 'nullable',
+            'slangs' => 'required|array', // Ensure slangs is an array
             'ar_meaning' => 'nullable',
             'fr_meaning' => 'nullable',
             'en_meaning' => 'nullable',
-            'slangs' => 'required|array', // Ensure slangs is an array
+            'uses' => 'nullable',
+            'exemple' => 'nullable',
         ]);
     }
 }

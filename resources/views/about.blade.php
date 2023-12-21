@@ -45,7 +45,7 @@
                     <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"/>
                     </svg>
-                    14/12/2023
+                    21/12/2023
                 </a>
                 <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Updates :</h2>
                 <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">

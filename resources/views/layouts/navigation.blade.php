@@ -30,6 +30,9 @@
             <li>
               <a href="/admin/words" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Admin Panel</a>
             </li>
+            <li>
+              <a href="/admin/correction-suggestions" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Admin Suggestions</a>
+            </li>
             @endadmin
             <li>
               <a href="/words/create" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Add a word</a>

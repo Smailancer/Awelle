@@ -13,9 +13,9 @@
 
     {{-- Display the rest of the words --}}
     @foreach ($words as $word)
-        @if (!in_array($word->spell, ['spell1', 'spell2', 'spell3']))
+
             <x-word-card :word="$word"/>
-        @endif
+
     @endforeach
 
 </div>
