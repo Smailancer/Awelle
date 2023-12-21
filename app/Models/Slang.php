@@ -16,4 +16,6 @@ class Slang extends Model
         return $this->belongsToMany(Word::class);
     }
 
+
+
 }

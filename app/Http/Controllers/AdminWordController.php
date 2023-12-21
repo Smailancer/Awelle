@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Word;
 use Illuminate\Validation\Rule;
+use App\Models\CorrectionSuggestion;
 use Illuminate\Support\Facades\Auth;
 
 class AdminWordController extends Controller
@@ -67,6 +68,45 @@ class AdminWordController extends Controller
 
         return back()->with('success', 'Word Deleted!');
     }
+
+
+
+
+
+
+public function showCorrectionSuggestions()
+{
+    // Fetch all correction suggestions with pending status
+    $correctionSuggestions = CorrectionSuggestion::get();
+
+    return view('admin.words.approve-corrections', compact('correctionSuggestions'));
+}
+
+
+// WordController.php
+
+public function processCorrection(CorrectionSuggestion $suggestion)
+{
+    // Validate the request, check permissions, etc.
+
+    $action = request('action');
+
+    if ($action === 'approve') {
+        // Perform logic for approval
+        $suggestion->status = 'approved';
+        // Additional logic as needed
+    } elseif ($action === 'decline') {
+        // Perform logic for decline
+        $suggestion->status = 'rejected';
+        // Additional logic as needed
+    }
+
+    $suggestion->save();
+
+    return redirect()->route('words.correctionSuggestions')->with('success', 'Correction suggestion processed.');
+}
+
+
 
     protected function validateWord(?Word $word = null): array
     {

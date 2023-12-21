@@ -9,6 +9,14 @@ class CorrectionSuggestion extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        // Existing fields
+        'term', 'standard', 'spell', 'tifinagh', 'type', 'uses', 'ar_meaning', 'fr_meaning', 'en_meaning', 'exemple', 'status',
+
+        // New field for suggested slangs
+        'slang_ids',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

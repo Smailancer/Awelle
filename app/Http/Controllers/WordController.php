@@ -163,30 +163,27 @@ class WordController extends Controller
 
         // Validate the input using the validateWord method with only necessary fields
         $attributes = $this->validateWord($word);
-
         $attributes['user_id'] = request()->user()->id;
         $attributes['word_id'] = $word->id;
 
-        // Create an instance of the Word model
+        // Create an instance of the CorrectionSuggestion model
         $wordModel = new CorrectionSuggestion();
 
         // Remove diacritics and أ from the term before storing
         $attributes['standard'] = $wordModel->removeDiacriticsAndAlef($attributes['term']);
 
-        $correction =  CorrectionSuggestion::create(Arr::except($attributes, 'slangs'));
+        // Convert slang_ids to JSON before storing
+        $attributes['slangs'] = json_encode(request('slangs'));
 
-        // Attach selected slangs to the word
-        $word->slang()->attach(request('slangs'));
         // Create the correction suggestion
-        // $correction = CorrectionSuggestion::create([
-        //     'user_id' => auth()->id(),
-        //     'word_id' => $word->id,
-        //     // Add other necessary fields here
-        // ]);
+        $correction = CorrectionSuggestion::create($attributes);
 
         // Redirect to the word show page with a success message
         return redirect()->route('words.show', $word)->with('success', 'Correction suggestion submitted.');
     }
+
+
+
 
 
     protected function validateWord(?Word $word = null): array

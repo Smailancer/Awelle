@@ -40,9 +40,8 @@
                         </div>
 
                         <div>
-                            <label for="slangs" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Slang</label>
-                            <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">You can select multi slangs </p>
-                            <select multiple required name="slangs[]" id="slangs" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                            <label for="slangs" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Suggested Slangs</label>
+                            <select multiple name="slangs[]" id="slangs" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                                 @foreach (\App\Models\Slang::all() as $slang)
                                     <option
                                         value="{{ $slang->id }}"
@@ -50,9 +49,6 @@
                                     >{{ ucwords($slang->name) }}</option>
                                 @endforeach
                             </select>
-                            @error("slangs")
-                                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                            @enderror
                         </div>
 
 

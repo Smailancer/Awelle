@@ -1,4 +1,4 @@
-<footer class="w-full bg-grey rounded-lg shadow dark:bg-gray-900 m-4 shadow-lg">
+<footer class="w-full bg-grey sm:text-center rounded-lg shadow dark:bg-gray-900 m-4 shadow-lg">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
             {{-- <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
@@ -13,7 +13,7 @@
             </div>
 
 
-            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0  dark:text-gray-400">
+            <ul class="flex flex-wrap items-center mb-6 sm:text-center text-sm font-medium text-gray-500 sm:mb-0  dark:text-gray-400">
                 <li>
                     <a href="About" class="mr-4 hover:underline md:mr-6 ">About</a>
                 </li>
@@ -34,6 +34,6 @@
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
             Made in <span class="text-green-500 text-1xl">&#127465;&#127487;</span> with <span class="text-red-500">&#10084;&#65039;</span> © 2023
-            <a href="/" class="hover:underline">Awelle™</a>. All Rights Reserved.
+            <a href="/" class="hover:underline">Awelle™</a>.
         </span>    </div>
 </footer>
