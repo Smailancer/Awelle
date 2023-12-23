@@ -24,7 +24,7 @@ class WordController extends Controller
         return view('words.index', [
             'words' => Word::latest()->filter(
                         request(['search', 'slang', 'author','type'])
-                    )->paginate(12)->withQueryString()
+                    )->paginate(16)->withQueryString()
         ]);
     }
 

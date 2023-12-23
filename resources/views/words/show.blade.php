@@ -87,7 +87,7 @@
                         </div>
 
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                {{-- @can('update-word', $word)
+                                @can('update-word', $word)
                                 <div class="flex space-x-2">
                                     <a href="/words/{{ $word->id }}/edit" class="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">Edit</a>
 
@@ -99,10 +99,10 @@
                                     </form>
 
                                 </div>
-                                @endcan --}}
-
+                                @else
                                 <a href="/words/{{ $word->id }}/suggest-correction" class="text-white bg-blue-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 mt-8 dark:focus:ring-yellow-900">Seggest Edit</a>
 
+                                @endcan
                             </td>
                     </div>
                 </article>
