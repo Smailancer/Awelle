@@ -112,6 +112,7 @@
         <br>
         <hr>
 
+
         <section class="col-span-8 col-start-5 mt-10 space-y-6">
             <h2 class="text-4xl font-bold dark:text-white">Add a comment</h2>
             @include ('words._add-comment-form')

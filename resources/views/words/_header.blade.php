@@ -1,8 +1,10 @@
 <header class="w-full mx-0 py-12 text-center mt-5">
+    <div class="max-w-screen-md mx-auto mt-auto mb-10 ">
+        <div style="width: 400px; height: 400px;" data-wordart-src="//cdn.wordart.com/json/vyccgq8ey7q8" ></div>
+    </div>
 
     <h1 class="mb-4 text-6xl font-extrabold text-yellow-300 dark:text-white md:text-6xl lg:text-8xl"> AWELLE </h1>
     <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">The First Tamazight Digital Dictionary.</p>
-
 
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-4">
         <div class="relative lg:inline-flex bg-gray-100 rounded-xl">
