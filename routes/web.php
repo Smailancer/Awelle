@@ -24,8 +24,11 @@ Route::middleware('can:admin')->group(function () {
     Route::resource('admin/words', AdminWordController::class)->except('show')->parameters(['words' => 'word:id'])->names('admin.words');
 
 
-    Route::get('admin/correction-suggestions', [AdminWordController::class, 'showCorrectionSuggestions'])->name('admin.words.correctionSuggestions');
+    Route::get('admin/correction-suggestions', [AdminWordController::class, 'indexCorrectionSuggestions'])->name('admin.words.correctionSuggestions');
     Route::post('admin/correction-suggestions/{suggestion}', [AdminWordController::class, 'processCorrection'])->name('admin.words.processCorrection');
+
+    Route::get('admin/correction-suggestions/{suggestion}', [AdminWordController::class, 'showCorrectionSuggestion'])
+        ->name('admin.words.showCorrectionSuggestion');
 
 });
 

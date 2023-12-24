@@ -74,13 +74,25 @@ class AdminWordController extends Controller
 
 
 
-public function showCorrectionSuggestions()
+public function indexCorrectionSuggestions()
 {
     // Fetch all correction suggestions with pending status
     $correctionSuggestions = CorrectionSuggestion::get();
 
-    return view('admin.words.approve-corrections', compact('correctionSuggestions'));
+    return view('admin.words.index-corrections', compact('correctionSuggestions'));
 }
+
+
+// Add this method to AdminWordController
+public function showCorrectionSuggestion($suggestionId)
+{
+    $suggestion = CorrectionSuggestion::findOrFail($suggestionId);
+    $originalWord = Word::findOrFail($suggestion->word_id);
+    $suggestedWord = Word::findOrFail($suggestion->suggested_word_id);
+
+    return view('admin.words.show', compact('originalWord', 'suggestedWord'));
+}
+
 
 
 // WordController.php

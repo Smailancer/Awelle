@@ -173,6 +173,17 @@
                 <li>ڤ (v) -  ينطق مثل الحرف اللاتيني V</li>
             </ul>
 
+            <h4 class="text-2xl font-bold dark:text-white mt-10 mb-5 ">Numbers </h3>
+            <ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+                <li>3 : Represents the Arabic letter "ع"</li>
+                <li>7 : Represents the Arabic letter "ح"</li>
+                <li>9 : Represents the Arabic letter "ق"</li>
+                <li>6 : Represents the Arabic letter "ط"</li>
+                <li>5 : Represents the Arabic letter "خ"</li>
+                <li>2 : Represents the Arabic letter "ء" (Hamzah), which is often written as a glottal stop.</li>
+
+            </ul>
+
 
             <div class="grid grid-cols-2 gap-4">
               {{-- <a href="#" class="px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Learn more</a>

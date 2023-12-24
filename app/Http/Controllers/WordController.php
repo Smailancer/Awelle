@@ -15,6 +15,12 @@ use Symfony\Polyfill\Intl\Normalizer\Normalizer;
 
 class WordController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->authorizeResource(Word::class, 'word', ['except' => ['index', 'create', 'store']]);
+    }
+
     /**
      * Display a listing of the resource.
      */
