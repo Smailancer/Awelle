@@ -10,29 +10,66 @@
                         @csrf
                         @method('PATCH')
 
-                        <div class=" gap-2 sm:grid-cols-2 sm:gap-2">
+                      <!-- Edit Term Input -->
+<div class="sm:col-span-2 mt-4 mb-4">
+    <label for="term" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">The Term</label>
+    <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Please write the term in Arabic letters</p>
+    <input required name="term" id="term" value="{{ old('term', $word->term) }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="أمان">
+    <div class="flex mt-2 space-x-2">
+        <button type="button" onclick="insertTermLetter('ڤ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ڤ (v)</kbd></button>
+        <button type="button" onclick="insertTermLetter('پ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>پ (p)</kbd></button>
+        <button type="button" onclick="insertTermLetter('چ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>چ (ch)</kbd></button>
+        <button type="button" onclick="insertTermLetter('گ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>گ (ga)</kbd></button>
+</div>
+    @error("term")
+        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+    @enderror
+</div>
 
-                            <div class="sm:col-span-2 mt-4 mb-4">
-                                <label for="term" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">The Term</label>
-                            <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Please write the term in Arabic letters</p>
-                            <input required name="term" id="term" value="{{ old('term', $word->term) }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="أمان">
+<!-- Edit Pronunciation Input -->
+<div class="sm:col-span-2 mt-4 mb-4">
+    <label for="spell" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Pronunciation</label>
+    <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Please write the pronunciation in Latin letters + numbers (A-Z / 0 -9)</p>
+    <input required name="spell" id="spell" value="{{ old('spell', $word->spell) }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Aman">
+    <div class="flex mt-2 space-x-2">
+        <button type="button" onclick="insertSpellLetter('č')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>č</kbd></button>
+        <button type="button" onclick="insertSpellLetter('ḍ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ḍ</kbd></button>
+        <button type="button" onclick="insertSpellLetter('ǧ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ǧ</kbd></button>
+        <button type="button" onclick="insertSpellLetter('ḥ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ḥ</kbd></button>
+        <button type="button" onclick="insertSpellLetter('ɣ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ɣ</kbd></button>
+        <button type="button" onclick="insertSpellLetter('ṛ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ṛ</kbd></button>
+        <button type="button" onclick="insertSpellLetter('ṣ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ṣ</kbd></button>
+        <button type="button" onclick="insertSpellLetter('ṭ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ṭ</kbd></button>
+        <button type="button" onclick="insertSpellLetter('ẓ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ẓ</kbd></button>
+        <button type="button" onclick="insertSpellLetter('ɛ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ɛ</kbd></button>
+</div>
+    @error("spell")
+        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+    @enderror
+</div>
 
-                            @error("term")
-                                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                            @enderror
-                        </div>
+<!-- JavaScript Functions -->
+<script>
+    function insertTermLetter(letter) {
+        var input = document.getElementById('term');
+        var cursorPosition = input.selectionStart;
+        var textBeforeCursor = input.value.substring(0, cursorPosition);
+        var textAfterCursor = input.value.substring(cursorPosition);
+        input.value = textBeforeCursor + letter + textAfterCursor;
+        // Set the cursor position after the inserted letter
+        input.setSelectionRange(cursorPosition + 1, cursorPosition + 1);
+    }
 
-
-                        <div class="sm:col-span-2 mt-4 mb-4">
-
-                            <label for="spell" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Prononciation</label>
-                            <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Please write the prononciation in Latin letters + numbers (A-Z / 0 -9) </p>
-                            <input required name="spell" id="spell" value="{{ old('spell', $word->spell) }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Aman">
-
-                            @error("spell")
-                                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                            @enderror
-                        </div>
+    function insertSpellLetter(letter) {
+        var input = document.getElementById('spell');
+        var cursorPosition = input.selectionStart;
+        var textBeforeCursor = input.value.substring(0, cursorPosition);
+        var textAfterCursor = input.value.substring(cursorPosition);
+        input.value = textBeforeCursor + letter + textAfterCursor;
+        // Set the cursor position after the inserted letter
+        input.setSelectionRange(cursorPosition + 1, cursorPosition + 1);
+    }
+</script>
 
                         <div class="sm:col-span-2 mt-4 mb-4">
 
