@@ -23,7 +23,8 @@
                 @endif
                 @endforeach
                 </div>
-                <a href="admin/correction-suggestions/{{$word->id}}" >
+                <a href="{{ route('admin.words.showCorrectionSuggestion', $word->id) }}">
+
                                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $word->term }}</h5>
                 </a>
                     <p class="font-normal text-gray-700 dark:text-gray-400">{{ Str::limit($word->ar_meaning, 100) }}</p>
