@@ -13,7 +13,7 @@
                     src="{{ $comment->author->gravatar }}"
                     alt="Michael Gough"> <a href="/?author={{ $comment->author->username }}">{{ $comment->author->username }}</a></p>
             <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
-                    title="February 8th, 2022">Feb. 8, 2022</time></p>
+                    title="February 8th, 2022">{{ $comment->created_at->diffForHumans() }}</time></p>
         </div>
 
 @auth
@@ -37,7 +37,7 @@
                         class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
                 </li>
                 <li>
-                    <form id="deleteCommentForm" method="POST" action="/words/{{ $word->term }}/comments/{{ $comment->id }}" onsubmit="return false;">
+                    <form id="deleteCommentForm" method="POST" action="/words/{{ $word->spell }}/comments/{{ $comment->id }}" onsubmit="return false;">
                         @csrf
                         @method('DELETE')
                         <a href="#" onclick="confirmDelete()" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Delete</a>

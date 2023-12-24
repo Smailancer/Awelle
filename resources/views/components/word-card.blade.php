@@ -16,7 +16,7 @@
 
                 <div class="mt-4">
                     <h1 class="text-3xl leading-loose clamp one-line pl-2 ">
-                        <a href="/words/{{ $word->term }}" style="font-family: 'Amiri Quran', serif;">
+                        <a href="/words/{{ $word->spell }}" style="font-family: 'Amiri Quran', serif;">
                             {{ $word->term }}
                         </a>
                     </h1>

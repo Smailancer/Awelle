@@ -45,7 +45,7 @@
                     <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"/>
                     </svg>
-                    23/12/2023
+                    24/12/2023
                 </a>
                 <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Updates :</h2>
                 <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
@@ -57,9 +57,8 @@
                         <li class="line-through decoration-yellow-300">Return to the previous page after logging in.</li>
                         <li class="line-through decoration-yellow-300">Add a list of future features on the About page.</li>
                         <li class="line-through decoration-yellow-300">Filter by word type</li>
-                        <li>Add a new field for suggested edits on the About page.</li>
                         <li class="line-through decoration-yellow-300">Words edit suggestions Featuer</li>
-                        <li>Ability to edit comments by the author and the administrator.</li>
+                        <li>Ability to edit comments by its own author .</li>
                         <li class="line-through decoration-yellow-300">Ability Delete comments by the author and the administrator.</li>
                         <li class="line-through decoration-yellow-300">Activate the comments section.</li>
                         <li class="line-through decoration-yellow-300">Programming the Import feature to import Excel files specifically for words.</li>

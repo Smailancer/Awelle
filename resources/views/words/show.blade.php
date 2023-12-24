@@ -117,12 +117,15 @@
             <h2 class="text-4xl font-bold dark:text-white">Add a comment</h2>
             @include ('words._add-comment-form')
 
-            @if($word->comments->count())
+            @if($commentsForWords->count())
+
                 <h2 class="text-4xl font-bold dark:text-white">Comments :</h2>
-                @foreach ($word->comments as $comment)
-                    <x-word-comment :comment="$comment" :word="$word"/>
-                @endforeach
+                @foreach ($commentsForWords as $comment)
+                <x-word-comment :comment="$comment" :word="$word"/>
+            @endforeach
             @endif
+
+
         </section>
     </main>
 </x-app-layout>
