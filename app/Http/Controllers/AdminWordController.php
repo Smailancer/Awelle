@@ -84,14 +84,15 @@ public function indexCorrectionSuggestions()
 
 
 // Add this method to AdminWordController
-public function showCorrectionSuggestion($suggestionId)
+public function showCorrectionSuggestion($suggestion)
 {
-    $suggestion = CorrectionSuggestion::findOrFail($suggestionId);
-    $originalWord = Word::findOrFail($suggestion->word_id);
-    $suggestedWord = Word::findOrFail($suggestion->suggested_word_id);
 
-    return view('admin.words.show', compact('originalWord', 'suggestedWord'));
+    $suggestion = CorrectionSuggestion::findOrFail($suggestion);
+    $word = Word::findOrFail($suggestion->word_id);
+
+    return view('admin.words.approve-corrections', compact('word','suggestion'));
 }
+
 
 
 
@@ -102,20 +103,39 @@ public function processCorrection(CorrectionSuggestion $suggestion)
     // Validate the request, check permissions, etc.
 
     $action = request('action');
+    $originalWord = Word::findOrFail($suggestion->word_id);
 
     if ($action === 'approve') {
-        // Perform logic for approval
+
+        // Update the original word with the suggestion values
+        $originalWord->update([
+            'term' => $suggestion->term,
+            'spell' => $suggestion->spell,
+            'tifinagh' => $suggestion->tifinagh,
+            'ar_meaning' => $suggestion->ar_meaning,
+            'fr_meaning' => $suggestion->fr_meaning,
+            'en_meaning' => $suggestion->en_meaning,
+            'type' => $suggestion->type,
+            'uses' => $suggestion->uses,
+            'exemple' => $suggestion->exemple,
+        ]);
+
+
+        $originalWord->slang()->sync(request('slangs'));
+        // Update the suggestion status to approved
         $suggestion->status = 'approved';
-        // Additional logic as needed
+        $suggestion->save();
+
+        return redirect()->route('words.show', $originalWord)->with('success', 'Correction suggestion approved.');
     } elseif ($action === 'decline') {
         // Perform logic for decline
         $suggestion->status = 'rejected';
-        // Additional logic as needed
+        $suggestion->save();
+
+        return redirect()->route('words.show', $originalWord)->with('success', 'Correction suggestion declined.');
     }
 
-    $suggestion->save();
-
-    return redirect()->route('words.correctionSuggestions')->with('success', 'Correction suggestion processed.');
+    return back()->with('error', 'Invalid action.');
 }
 
 

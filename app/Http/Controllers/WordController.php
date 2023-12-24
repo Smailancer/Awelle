@@ -119,6 +119,7 @@ class WordController extends Controller
         $word->update(Arr::except($attributes, 'slangs'));
 
         // Sync selected slangs to the word
+        dd(request('slangs'));
         $word->slang()->sync(request('slangs'));
 
         // return back()->with('success', 'Word Updated!');
