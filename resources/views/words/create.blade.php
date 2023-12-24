@@ -8,27 +8,69 @@
         <form method="POST" action="/words" enctype="multipart/form-data">
             @csrf
             {{-- <div class="grid gap-4 sm:grid-cols-2 sm:gap-6"> --}}
-                <div class="sm:col-span-2 mb-5">
 
+                <div class="sm:col-span-2 mb-5">
                     <label for="term" class="block mt-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">The Term<span class="text-red-500 font-bold text-lg">*</span></label>
-                    <p id="helper-text-explanation" class="text-sm text-gray-500 dark:text-gray-400">Please write the term in arabic letters with diactrics "المصطلح بالتشكيل"</p>
-                    <input required name="term" id="term" value="{{ old('term') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="أَوَالْ">
+                    <p id="helper-text-explanation" class="mb-2 text-sm text-gray-500 dark:text-gray-400">Please write the term in Arabic / non-Arabic script letters + diacritics "المصطلح بالتشكيل"</p>
+
+                    <div class="flex items-center">
+                        <input required name="term" id="term" value="{{ old('term') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="أَوَالْ">
+                    </div>
+
+                    <div class="flex mt-2 space-x-2">
+                        <button type="button" onclick="insertTermLetter('ڤ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ڤ (v)</kbd></button>
+                        <button type="button" onclick="insertTermLetter('پ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>پ (p)</kbd></button>
+                        <button type="button" onclick="insertTermLetter('چ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>چ (ch)</kbd></button>
+                        <button type="button" onclick="insertTermLetter('گ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>گ (ga)</kbd></button>
+                    </div>
 
                     @error("term")
                         <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                     @enderror
-
                 </div>
 
-                <div class="sm:col-span-2 mb-5">
-                    <label for="spell" class="block mb-2 mt-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Prononciation<span class="text-red-500 font-bold text-lg">*</span></label>
-                    <p id="helper-text-explanation" class="text-sm text-gray-500 dark:text-gray-400">Please write the prononciation in latin letters + numbers (A-Z / 0 -9) </p>
-                    <input required name="spell" id="spell" value="{{ old('spell') }}" pattern="[^/]*" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Awelle">
+                <script>
+                    function insertTermLetter(letter) {
+                        var input = document.getElementById('term');
+                        input.value += letter;
+                    }
+                </script>
 
-                    @error("spell")
-                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
+
+            <div class="sm:col-span-2 mb-5">
+                <label for="spell" class="block mb-2 mt-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Pronunciation<span class="text-red-500 font-bold text-lg">*</span></label>
+                <p id="helper-text-explanation" class="mb-2 text-sm text-gray-500 dark:text-gray-400">Please write the pronunciation in: latin / non-latin script letters / numbers</p>
+
+                <div class="flex items-center">
+                    <input required name="spell" id="spell" value="{{ old('spell') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Awelle">
                 </div>
+
+                <div class="flex mt-2 space-x-2">
+                    <button type="button" onclick="insertSpellLetter('č')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>č</kbd></button>
+                    <button type="button" onclick="insertSpellLetter('ḍ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ḍ</kbd></button>
+                    <button type="button" onclick="insertSpellLetter('ǧ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ǧ</kbd></button>
+                    <button type="button" onclick="insertSpellLetter('ḥ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ḥ</kbd></button>
+                    <button type="button" onclick="insertSpellLetter('ɣ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ɣ</kbd></button>
+                    <button type="button" onclick="insertSpellLetter('ṛ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ṛ</kbd></button>
+                    <button type="button" onclick="insertSpellLetter('ṣ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ṣ</kbd></button>
+                    <button type="button" onclick="insertSpellLetter('ṭ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ṭ</kbd></button>
+                    <button type="button" onclick="insertSpellLetter('ẓ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ẓ</kbd></button>
+                    <button type="button" onclick="insertSpellLetter('ɛ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ɛ</kbd></button>
+                </div>
+
+                @error("spell")
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <script>
+                function insertSpellLetter(letter) {
+                    var input = document.getElementById('spell');
+                    input.value += letter;
+                }
+            </script>
+
+
 
 
 
@@ -81,19 +123,19 @@
                 <div id="default-tab-content mb-5">
                     <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <label for="ar_meaning" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">المعنى بالعربية<span class="text-red-500 font-bold text-lg">*</span></label>
-                        <textarea  name="ar_meaning" id="ar_meaning" required rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="الماء"></textarea>
+                        <textarea  name="ar_meaning" id="ar_meaning" required rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="الكلام أو الحديث "></textarea>
                         @error("ar_meaning")
                             <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                             @enderror                    </div>
                     <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
                         <label for="fr_meaning" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Signification en français</label>
-                        <textarea  name="fr_meaning" id="fr_meaning"  rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="L'eau"></textarea>
+                        <textarea  name="fr_meaning" id="fr_meaning"  rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Parler"></textarea>
                         @error("fr_meaning")
                             <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                             @enderror                    </div>
                     <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                         <label for="en_meaning" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Meaning in English</label>
-                        <textarea  name="en_meaning" id="en_meaning"  rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Water"></textarea>
+                        <textarea  name="en_meaning" id="en_meaning"  rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Talking or Speaking"></textarea>
                         @error("en_meaning")
                             <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                             @enderror
@@ -121,7 +163,9 @@
 
                     <div class="sm:col-span-2 my-8">
                         <label for="exemple" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Examples</label>
-                        <textarea  name="exemple" id="exemple"  rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="أَوِيذْ أَدَسْوَغْ أَمَانْ"></textarea>
+
+                        <textarea  name="exemple" id="exemple"  rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="أَوَالْ نَتْمَازِيغْتْ"></textarea>
+
                     </div>
                     @error("exemple")
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>

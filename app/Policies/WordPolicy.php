@@ -22,6 +22,7 @@ class WordPolicy
     public function view(User $user, word $word): bool
     {
         //
+        return true;
     }
 
     /**
@@ -35,11 +36,20 @@ class WordPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, word $word): bool
+
+
+    public function update(User $user, Word $word): bool
     {
         return $user->id === $word->user_id || $user->isAdmin();
-
     }
+
+
+
+    public function edit(User $user, Word $word): bool
+    {
+        return $this->update($user, $word);
+    }
+
 
     /**
      * Determine whether the user can delete the model.
