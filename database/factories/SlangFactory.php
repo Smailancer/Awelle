@@ -23,11 +23,6 @@ class SlangFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'name' => $this->faker->unique()->word(),
-            'ar_name' => $this->faker->unique()->slug(),
-            'description' => $this->faker->sentence,
 
-        ];
     }
 }

@@ -27,15 +27,15 @@ class WordFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::factory(),
-            // 'slang_id' => Slang::factory(),
-            'term' => $this->faker->sentence(),
-            'spell' => $this->faker->slug(),
-            'tifinagh' => $this->faker->slug(),
-            'exemple' =>  $this->faker->paragraph(3),
-            'ar_meaning' =>  $this->faker->paragraph(2),
-            'fr_meaning' =>  $this->faker->paragraph(2),
-            'en_meaning' =>  $this->faker->paragraph(2),
+            // 'user_id' => User::factory(),
+            // // 'slang_id' => Slang::factory(),
+            // 'term' => $this->faker->sentence(),
+            // 'spell' => $this->faker->slug(),
+            // 'tifinagh' => $this->faker->slug(),
+            // 'exemple' =>  $this->faker->paragraph(3),
+            // 'ar_meaning' =>  $this->faker->paragraph(2),
+            // 'fr_meaning' =>  $this->faker->paragraph(2),
+            // 'en_meaning' =>  $this->faker->paragraph(2),
         ];
     }
 }
