@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Word;
+use App\Models\Comment;
 use Illuminate\Support\Arr;
 use Illuminate\Validation\Rule;
 use App\Models\CorrectionSuggestion;
@@ -24,7 +25,7 @@ class WordController extends Controller
         return view('words.index', [
             'words' => Word::latest()->filter(
                         request(['search', 'slang', 'author','type'])
-                    )->paginate(12)->withQueryString()
+                    )->paginate(16)->withQueryString()
         ]);
     }
 
@@ -32,16 +33,20 @@ class WordController extends Controller
 
     public function show(Word $word)
     {
-        $wordsWithSameTerm = Word::where('term', $word->term)->get();
+        $wordsWithSameSpell = Word::where('spell', $word->spell)->get();
 
         $correctionSuggestions = CorrectionSuggestion::where('word_id', $word->id)
-            ->where('status', 'pending') // You might want to adjust this based on your workflow
+            ->where('status', 'pending')
             ->get();
+
+        // Get comments for all words with the same spell
+        $commentsForWords = Comment::whereIn('word_id', $wordsWithSameSpell->pluck('id'))->get();
 
         return view('words.show', [
             'word' => $word,
-            'wordsWithSameTerm' => $wordsWithSameTerm,
+            'wordsWithSameTerm' => $wordsWithSameSpell,
             'correctionSuggestions' => $correctionSuggestions,
+            'commentsForWords' => $commentsForWords,
         ]);
     }
 
@@ -139,6 +144,10 @@ class WordController extends Controller
     public function about()
     {
         return view('about');
+    }
+    public function wordscloud()
+    {
+        return view('cloud');
     }
 
 

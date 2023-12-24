@@ -40,6 +40,7 @@
         -webkit-line-clamp: 1;
     }
 </style>
+<script src="//cdn.wordart.com/wordart.min.js" async defer></script>
 
     </head>
     <body style="font-family: 'Cairo',Open Sans, sans-serif; ">
