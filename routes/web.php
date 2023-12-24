@@ -34,7 +34,7 @@ Route::middleware('can:admin')->group(function () {
 
 Route::middleware('auth')->group(function () {
 
-    Route::delete('words/{word:term}/comments/{comment}', [CommentController::class, 'destroy'])->name('words.comments.destroy');
+    Route::delete('words/{word:spell}/comments/{comment}', [CommentController::class, 'destroy'])->name('words.comments.destroy');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -47,16 +47,17 @@ Route::get('/Tamlab', [WordController::class, 'lab'])->name('TamLab');
 Route::get('/Procourt', [WordController::class, 'court'])->name('Procourt');
 Route::get('/Academy', [WordController::class, 'academy'])->name('Academy');
 Route::get('/About', [WordController::class, 'about'])->name('About');
+Route::get('/wordscloud', [WordController::class, 'wordscloud'])->name('WordsCloud');
 
 Route::resource('words', WordController::class)->parameters(['words' => 'word:id'])->except(['show']);
 
 Route::get('words/{word}/suggest-correction', [WordController::class, 'suggestCorrection'])->name('words.suggestCorrection');
 Route::post('words/{word}/storeCorrectionSuggestion', [WordController::class, 'storeCorrectionSuggestion'])->name('words.suggest-correction');
 
-Route::get('words/{word:term}', [WordController::class, 'show'])->name('words.show');
+Route::get('words/{word:spell}', [WordController::class, 'show'])->name('words.show');
 
 
-Route::resource('words/{word:term}/comments', CommentController::class)->only(['store', 'update']);
+Route::resource('words/{word:spell}/comments', CommentController::class)->only(['store', 'update']);
 
 // Admin Section
 

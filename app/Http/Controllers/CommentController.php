@@ -83,15 +83,16 @@ class CommentController extends Controller
          // Retrieve the comment from the database
          $comment = Comment::findOrFail($commentId);
 
+         // Get the associated word
+         $word = $comment->word;
+
          // Perform your deletion logic
          $comment->delete();
 
-         // Assuming you have a relationship defined in the Comment model to get the associated word
-         $word = $comment->word;
-
          // Redirect to the word's show route
-         return redirect()->route('words.show', $word)->with('success', 'Comment deleted successfully.');
+         return redirect()->route('words.show', $word->spell)->with('success', 'Comment deleted successfully.');
      }
+
 
 
 

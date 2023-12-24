@@ -1,6 +1,6 @@
 {{-- @auth --}}
     <x-panel>
-        <form method="POST" action="/words/{{ $word->term }}/comments">
+        <form method="POST" action="/words/{{ $word->spell }}/comments">
             @csrf
 
             <header class="flex items-center">

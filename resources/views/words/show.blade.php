@@ -103,6 +103,7 @@
                                 <a href="/words/{{ $word->id }}/suggest-correction" class="text-white bg-blue-600 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 mt-8 dark:focus:ring-yellow-900">Seggest Edit</a>
                                 @endcan
 
+                                @endcan
                             </td>
                     </div>
                 </article>
@@ -112,16 +113,20 @@
         <br>
         <hr>
 
+
         <section class="col-span-8 col-start-5 mt-10 space-y-6">
             <h2 class="text-4xl font-bold dark:text-white">Add a comment</h2>
             @include ('words._add-comment-form')
 
-            @if($word->comments->count())
+            @if($commentsForWords->count())
+
                 <h2 class="text-4xl font-bold dark:text-white">Comments :</h2>
-                @foreach ($word->comments as $comment)
-                    <x-word-comment :comment="$comment" :word="$word"/>
-                @endforeach
+                @foreach ($commentsForWords as $comment)
+                <x-word-comment :comment="$comment" :word="$word"/>
+            @endforeach
             @endif
+
+
         </section>
     </main>
 </x-app-layout>
