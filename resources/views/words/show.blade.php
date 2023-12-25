@@ -14,7 +14,7 @@
                             </div>
                         </div>
 
-                        <h1 class="font-bold text-3xl lg:text-4xl mb-6" style="font-family: 'Amiri Quran', serif;">
+                        <h1 class="font-bold text-3xl lg:text-4xl mb-6 mt-5 " style="font-family: 'Amiri Quran', serif;">
                             {{ $word->term }}
                         </h1>
 
@@ -57,7 +57,7 @@
                             </div>
                         </div>
 
-                        <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <div class="mt-10 w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                             <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab-{{ $word->id }}" data-tabs-toggle="#defaultTabContent-{{ $word->id }}" role="tablist">
                                 <li class="me-2">
                                     <button id="about-tab-{{ $word->id }}" data-tabs-target="#about-{{ $word->id }}" type="button" role="tab" aria-controls="about" aria-selected="true" class="inline-block p-4 text-blue-600 rounded-ss-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-500">Uses and Notes</button>

@@ -19,7 +19,7 @@ class WordController extends Controller
 
     public function __construct()
     {
-        $this->authorizeResource(Word::class, 'word', ['except' => ['index', 'create', 'store']]);
+        $this->authorizeResource(Word::class, 'word', ['except' => ['index', 'create','show', 'store']]);
     }
 
     /**
@@ -28,11 +28,13 @@ class WordController extends Controller
 
     public function index()
     {
+
         return view('words.index', [
             'words' => Word::latest()->filter(
                         request(['search', 'slang', 'author','type'])
                     )->paginate(16)->withQueryString()
         ]);
+
     }
 
 
@@ -119,7 +121,6 @@ class WordController extends Controller
         $word->update(Arr::except($attributes, 'slangs'));
 
         // Sync selected slangs to the word
-        dd(request('slangs'));
         $word->slang()->sync(request('slangs'));
 
         // return back()->with('success', 'Word Updated!');

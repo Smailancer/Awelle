@@ -10,7 +10,6 @@ use Spatie\Enum\Laravel\Enum;
  * @method static self NUMBER()
  * @method static self PRONOUN()
  * @method static self BASIC_PHRASE()
- * @method static self PREPOSITION()
  * @method static self CONJUNCTION()
  * @method static self QUESTION_WORD()
  * @method static self COLOR()
@@ -21,7 +20,7 @@ use Spatie\Enum\Laravel\Enum;
  * @method static self ANIMAL_NATURE()
  * @method static self FOOD_DRINK()
  * @method static self BODY_PART()
- * @method static self COMMON_TOOL_OBJECT()
+ * @method static self TOOLS_OBJECTS()
  * @method static self FEELINGS_EMOTIONS()
  * @method static self MEMES()
  */
@@ -34,7 +33,6 @@ final class WordEnum extends Enum
         'NUMBER' => 'Numbers',
         'PRONOUN' => 'Pronouns',
         'BASIC_PHRASE' => 'Basic Phrases',
-        'PREPOSITION' => 'Prepositions',
         'CONJUNCTION' => 'Conjunctions',
         'QUESTION_WORD' => 'Question Words',
         'COLOR' => 'Colors',
@@ -45,7 +43,7 @@ final class WordEnum extends Enum
         'ANIMAL_NATURE' => 'Animals and Nature',
         'FOOD_DRINK' => 'Food and Drinks',
         'BODY_PART' => 'Body Parts',
-        'COMMON_TOOL_OBJECT' => 'Common Tools and Objects',
+        'TOOLS_OBJECTS' => 'Common Tools and Objects',
         'FEELINGS_EMOTIONS' => 'Feelings and Emotions',
         'MEMES' => 'Memes',
     ];
