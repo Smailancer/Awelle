@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Seeders;
+use Faker\Factory as Faker;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,7 +14,7 @@ class WilayaSeeder extends Seeder
     public function run(): void
     {
         //
-    
+
         // Load wilayas from json
         $wilayas_json = json_decode(file_get_contents(database_path('seeders/json/Wilaya_Of_Algeria.json')));
 
@@ -27,7 +28,7 @@ class WilayaSeeder extends Seeder
             ];
         }
         Wilaya::insert($data);
-    
+
 
     }
 }

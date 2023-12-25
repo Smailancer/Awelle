@@ -7,6 +7,7 @@ use App\Models\Word;
 use App\Models\Slang;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Faker\Factory as Faker;
 
 class WordSeeder extends Seeder
 {
