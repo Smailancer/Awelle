@@ -2,6 +2,8 @@
 
 <x-app-layout>
     <x-setting heading="Manage Suggestions">
+        @if ($correctionSuggestions->count())
+
 
         <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
 
@@ -96,5 +98,10 @@
             </div>
         @endforeach
         </main>
+
+        @else
+        <p class="text-center">No edit suggestions yet .</p>
+    @endif
+
 </x-setting>
 </x-app-layout>

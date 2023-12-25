@@ -4,8 +4,6 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Slang;
-use Faker\Factory as Faker;
-
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\slang>
  */
@@ -25,6 +23,11 @@ class SlangFactory extends Factory
      */
     public function definition()
     {
+        return [
+            'name' => $this->faker->unique()->word(),
+            'ar_name' => $this->faker->unique()->slug(),
+            'description' => $this->faker->sentence,
 
+        ];
     }
 }
