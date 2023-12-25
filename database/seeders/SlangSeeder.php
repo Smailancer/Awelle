@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Slang;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Faker\Factory as Faker;
 
 class SlangSeeder extends Seeder
 {

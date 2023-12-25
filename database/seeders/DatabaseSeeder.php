@@ -8,6 +8,7 @@ use App\Models\Word;
 use App\Models\Slang;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
 {
