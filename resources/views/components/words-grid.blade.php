@@ -11,12 +11,17 @@
         @endforeach
     @endforeach
 
-    {{-- Display the rest of the words --}}
+    {{-- Display the rest of the words excluding the pinned ones --}}
     @foreach ($words as $word)
+        @php
+            // Check if the current word is among the pinned words
+            $isPinned = in_array($word->spell, ['awelle', 'Aman', '9im']);
+        @endphp
 
+        {{-- Skip this word if it's already pinned --}}
+        @unless($isPinned)
             <x-word-card :word="$word"/>
-
+        @endunless
     @endforeach
 
 </div>
-
