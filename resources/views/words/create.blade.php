@@ -18,10 +18,10 @@
                     </div>
 
                     <div class="flex mt-2 space-x-2">
-                        <button type="button" onclick="insertTermLetter('ڤ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ڤ (v)</kbd></button>
+                        <button type="button" onclick="insertTermLetter('ڥ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ڥ (v)</kbd></button>
                         <button type="button" onclick="insertTermLetter('پ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>پ (p)</kbd></button>
                         <button type="button" onclick="insertTermLetter('چ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>چ (ch)</kbd></button>
-                        <button type="button" onclick="insertTermLetter('گ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>گ (ga)</kbd></button>
+                        <button type="button" onclick="insertTermLetter('ڨ')" class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"><kbd>ڨ (ga)</kbd></button>
                     </div>
 
                     @error("term")

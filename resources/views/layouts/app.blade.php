@@ -170,8 +170,8 @@
             <ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
                 <li>چ (ch) - ج بثلاث نقط ينطق تشا  </li>
                 <li>پ (p) - ينطق مثل الحرف اللاتيني P</li>
-                <li>ݣ/گ (ga) ينطق كالجيم المصرية G </li>
-                <li>ڤ (v) -  ينطق مثل الحرف اللاتيني V</li>
+                <li>ڨ (ga) ينطق كالجيم المصرية G </li>
+                <li>ڥ (v) -  ينطق مثل الحرف اللاتيني V</li>
             </ul>
 
             <h4 class="text-2xl font-bold dark:text-white mt-10 mb-5 ">Numbers </h3>
