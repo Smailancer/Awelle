@@ -41,6 +41,7 @@ class WordController extends Controller
 
     public function show(Word $word)
     {
+
         $wordsWithSameSpell = Word::where('spell', $word->spell)->get();
 
         $correctionSuggestions = CorrectionSuggestion::where('word_id', $word->id)
@@ -88,9 +89,11 @@ class WordController extends Controller
 
     // Remove diacritics and أ from the term before storing
     $attributes['standard'] = $wordModel->removeDiacriticsAndAlef($attributes['term']);
+    $attributes['spell'] = str_replace('/', '-', $attributes['spell']);
 
     // Create the word without the slangs
     $word = Word::create(Arr::except($attributes, 'slangs'));
+    // $word->update(['spell' => urlencode($word->spell)]);
 
     // Attach selected slangs to the word
     $word->slang()->attach(request('slangs'));
@@ -119,6 +122,9 @@ class WordController extends Controller
 
         // Update the word without updating the slangs
         $word->update(Arr::except($attributes, 'slangs'));
+
+
+        $word->update(['spell' => str_replace('/', '-', $word->spell)]);
 
         // Sync selected slangs to the word
         $word->slang()->sync(request('slangs'));

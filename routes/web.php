@@ -55,8 +55,8 @@ Route::resource('words', WordController::class)->parameters(['words' => 'word:id
 Route::get('words/{word}/suggest-correction', [WordController::class, 'suggestCorrection'])->name('words.suggestCorrection');
 Route::post('words/{word}/storeCorrectionSuggestion', [WordController::class, 'storeCorrectionSuggestion'])->name('words.suggest-correction');
 
+// Route::get('words/{word:spell}', [WordController::class, 'show'])->name('words.show');
 Route::get('words/{word:spell}', [WordController::class, 'show'])->name('words.show');
-
 
 Route::resource('words/{word:spell}/comments', CommentController::class)->only(['store', 'update']);
 

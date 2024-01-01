@@ -33,7 +33,7 @@
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            Made in <span class="text-green-500 text-1xl">&#127465;&#127487;</span> with <span class="text-red-500">&#10084;&#65039;</span> © 2023
+            Made in <span class="text-green-500 text-1xl">🌍</span> with <span class="text-red-500">&#10084;&#65039;</span> © 2024
             <a href="/" class="hover:underline">Awelle™</a>.
         </span>    </div>
 </footer>

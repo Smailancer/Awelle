@@ -162,16 +162,17 @@
                 <li>ṛ (َر) - ينطق كراء مغلظة</li>
                 <li>ṣ (ص) - ينطق كحرف الصاد</li>
                 <li>ṭ (ط) - ينطق كحرف الطاء</li>
-                <li>ẓ (ظ) - ينطق كحرف الظاء</li>
+                <li>ẓ (ژ) - ينطق كحرف زاي مغلظ</li>
                 <li>ɛ (ع) - ينطق كحرف العين</li>
             </ul>
 
             <h4 class="text-2xl font-bold dark:text-white mt-10 mb-5 ">Non-Arabic scripts letters</h3>
             <ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
-                <li>چ (ch) - ج بثلاث نقط ينطق تشا  </li>
-                <li>پ (p) - ينطق مثل الحرف اللاتيني P</li>
-                <li>ڨ (ga) ينطق كالجيم المصرية G </li>
-                <li>ڥ (v) -  ينطق مثل الحرف اللاتيني V</li>
+                <li>چ (ch) - ج مثلثة تشا  </li>
+                <li>پ (p) - P باء مثلثة تنطق </li>
+                <li>ڨ (ga) - Ga قاف مثلثة تنطق  </li>
+                <li>ڥ (v) - V ينطق مثل الحرف اللاتيني </li>
+                <li>ژ (ẓ) -  زاي المثلثة تنطق ز مفخمة</li>
             </ul>
 
             <h4 class="text-2xl font-bold dark:text-white mt-10 mb-5 ">Numbers </h3>
