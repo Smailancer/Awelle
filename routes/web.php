@@ -43,7 +43,10 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::get('/Contact', [ContactController::class, 'show'])->name('contact');
+Route::get('/Contact', [ContactController::class, 'show'])->name('contact.show');
+Route::post('/Contact', [ContactController::class, 'submit'])->name('contact.submit');
+
+
 Route::get('/Tamlab', [WordController::class, 'lab'])->name('TamLab');
 Route::get('/Procourt', [WordController::class, 'court'])->name('Procourt');
 Route::get('/Academy', [WordController::class, 'academy'])->name('Academy');

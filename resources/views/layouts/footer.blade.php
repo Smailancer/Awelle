@@ -27,7 +27,7 @@
                     <a href="Academy" class="mr-4 hover:underline md:mr-6 ">Academy</a>
                 </li>
                 <li>
-                    <a href="{{ route('contact') }}" class="hover:underline">Contact</a>
+                    <a href="Contact" class="hover:underline">Contact</a>
                 </li>
             </ul>
         </div>

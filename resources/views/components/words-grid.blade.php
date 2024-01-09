@@ -3,7 +3,7 @@
 <div class="lg:grid lg:grid-cols-4">
 
     {{-- Pin specific words by their spells --}}
-    @foreach (['awelle', 'Aman', '9im'] as $pinnedspell)
+    @foreach (['Awelle', 'Aman', '9im'] as $pinnedspell)
         @foreach ($words as $word)
             @if ($word->spell === $pinnedspell)
                 <x-word-card :word="$word"/>

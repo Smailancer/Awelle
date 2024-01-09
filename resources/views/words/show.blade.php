@@ -68,13 +68,14 @@
                             </ul>
                             <div id="defaultTabContent-{{ $word->id }}">
                                 <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about-{{ $word->id }}" role="tabpanel" aria-labelledby="about-tab-{{ $word->id }}">
-                                    <p class="mb-3 text-gray-500 dark:text-gray-400">{{ $word->uses }}</p>
+                                    <p class="mb-3 text-gray-500 dark:text-gray-400">{!! nl2br(e($word->uses)) !!}</p>
                                 </div>
                                 <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="services-{{ $word->id }}" role="tabpanel" aria-labelledby="services-tab-{{ $word->id }}">
                                     <blockquote class="p-4 my-4 border-s-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab-{{ $word->id }}">
-                                        <p class="text-xl italic font-medium leading-relaxed text-gray-900 dark:text-white">{{ $word->exemple }}</p>
+                                        <p class="text-xl italic font-medium leading-relaxed text-gray-900 dark:text-white">{!! nl2br(e($word->exemple)) !!}</p>
                                     </blockquote>
                                 </div>
+
                             </div>
                         </div>
 

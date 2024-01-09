@@ -12,7 +12,7 @@
                 Tutorial
             </a> --}}
             <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-4">Vision</h1>
-            <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-8">A site for documenting and developing the Algerian tangible and intangible heritage, starting from the dialects of each society, to the food and the way it is prepared, to clothing, wedding traditions, parties, songs, and artistic production.</p> </p>
+            <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-8">Documenting and developing the North African tangible and intangible heritage, starting from the dialects of each society, to the food and the way it is prepared, to clothing, wedding traditions, parties, songs, and artistic production.</p> </p>
 
 
             {{-- <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-4">Development</h1>

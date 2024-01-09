@@ -155,8 +155,8 @@
            <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
             <ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
                 <li>č (چ) - ج بثلاث نقط ينطق تشا</li>
+                <li>ǧ (دج) - ينطق جيما معطشة دجـا</li>
                 <li>ḍ (ض) - ينطق كحرف الضاد</li>
-                <li>ǧ (ج) - ينطق كحرف الجيم</li>
                 <li>ḥ (ح) - ينطق كحرف الحاء</li>
                 <li>ɣ (غ) - ينطق كحرف الغين</li>
                 <li>ṛ (َر) - ينطق كراء مغلظة</li>
@@ -164,6 +164,8 @@
                 <li>ṭ (ط) - ينطق كحرف الطاء</li>
                 <li>ẓ (ژ) - ينطق كحرف زاي مغلظ</li>
                 <li>ɛ (ع) - ينطق كحرف العين</li>
+                <li>q (ق) - ينطق كحرف القاف</li>
+                <li>x (خ) - ينطق كحرف القاف</li>
             </ul>
 
             <h4 class="text-2xl font-bold dark:text-white mt-10 mb-5 ">Non-Arabic scripts letters</h3>

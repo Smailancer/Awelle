@@ -41,7 +41,6 @@ class WordController extends Controller
 
     public function show(Word $word)
     {
-
         $wordsWithSameSpell = Word::where('spell', $word->spell)->get();
 
         $correctionSuggestions = CorrectionSuggestion::where('word_id', $word->id)
@@ -51,6 +50,9 @@ class WordController extends Controller
         // Get comments for all words with the same spell
         $commentsForWords = Comment::whereIn('word_id', $wordsWithSameSpell->pluck('id'))->get();
 
+        // Reverse the replacement of hyphens or underscores with slashes
+        $word->spell = str_replace('-', '/', $word->spell);
+
         return view('words.show', [
             'word' => $word,
             'wordsWithSameTerm' => $wordsWithSameSpell,
@@ -58,6 +60,7 @@ class WordController extends Controller
             'commentsForWords' => $commentsForWords,
         ]);
     }
+
 
 
     /**
