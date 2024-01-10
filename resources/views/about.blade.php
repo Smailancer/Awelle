@@ -12,7 +12,7 @@
                 Tutorial
             </a> --}}
             <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-4">Vision</h1>
-            <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-8">Documenting and developing the North African tangible and intangible heritage, starting from the dialects of each society, to the food and the way it is prepared, to clothing, wedding traditions, parties, songs, and artistic production.</p> </p>
+            <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-8">Documenting <span class="underline underline-offset-3 decoration-4 decoration-amber-400 dark:decoration-blue-600"> and developing the vocabulary elements </span>of tangible and intangible heritage, starting from the dialects of each society, to nature, food and the names of its ingredients, to clothing, holiday traditions, daily life habits, commonly used tools, and artistic production ...</p> </p>
 
 
             {{-- <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-4">Development</h1>
@@ -74,8 +74,8 @@
                         <li>Activate password reset functionality.</li>
                         <li>Add a section to the admin control panel for managing words for each user to manage their words.</li>
                         <li class="line-through decoration-yellow-300">Final modification to layout vs app to solve the small screen issue.</li>
+                        <li class="line-through decoration-yellow-300">Activate the contact us form.</li>
                         <li>Night mode.</li>
-                        <li>Activate the contact us form.</li>
                         <li>Activate the mailing list.</li>
                         <li>Add a filter to display matching words in more than one dialect (Edit in the search list only and make it multi-select).</li>
                    <li>...</li>
