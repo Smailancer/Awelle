@@ -44,7 +44,7 @@
 
     </head>
     <body style="font-family: 'Cairo',Open Sans, sans-serif; ">
-        <div class="px-6 py-2 min-h-screen">
+        <div class="px-2 py-2 min-h-screen">
 
             @include('layouts.navigation')
 
@@ -165,7 +165,7 @@
                 <li>ẓ (ژ) - ينطق كحرف زاي مغلظ</li>
                 <li>ɛ (ع) - ينطق كحرف العين</li>
                 <li>q (ق) - ينطق كحرف القاف</li>
-                <li>x (خ) - ينطق كحرف القاف</li>
+                <li>x (خ) - ينطق كحرف الخاء</li>
             </ul>
 
             <h4 class="text-2xl font-bold dark:text-white mt-10 mb-5 ">Non-Arabic scripts letters</h3>

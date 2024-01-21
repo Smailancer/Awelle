@@ -39,7 +39,7 @@
 
             <div class="sm:col-span-2 mb-5">
                 <label for="spell" class="block mb-2 mt-2 text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Pronunciation<span class="text-red-500 font-bold text-lg">*</span></label>
-                <p id="helper-text-explanation" class="mb-2 text-sm text-gray-500 dark:text-gray-400">Please write the pronunciation in: latin / non-latin script letters / numbers</p>
+                <p id="helper-text-explanation" class="mb-2 text-sm text-gray-500 dark:text-gray-400">Please write the pronunciation in: latin and non-latin script letters and numbers</p>
 
                 <div class="flex items-center">
                     <input required name="spell" id="spell" value="{{ old('spell') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Awelle">
@@ -77,7 +77,7 @@
                 <div class="sm:col-span-2 mb-5">
 
                     <label for="tifinagh" class="block mb-2  mt-2 text-sm  font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Tifinagh</label>
-                    <p id="helper-text-explanation" class=" text-sm text-gray-500 dark:text-gray-400">Not obligation </p>
+                    <p id="helper-text-explanation" class=" text-sm text-gray-500 dark:text-gray-400">Write the term in tifinagh if you know it </p>
                     <input name="tifinagh" id="tifinagh" value="{{ old('tifinagh') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ⴰⵡⴰⵍ">
 
                     @error("tifinagh")
@@ -87,7 +87,8 @@
 
 
                 <div>
-                    <label for="slangs" class="block mb-2 mt-2  text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Slang <span class="text-red-500 font-bold text-lg">*</span></label>
+                    <label for="slangs" class="block mb-2 mt-2  text-sm font-medium text-gray-900 dark:text-white uppercase font-bold text-xs">Varients <span class="text-red-500 font-bold text-lg">*</span></label>
+                    <p id="helper-text-explanation" class=" text-sm text-gray-500 dark:text-gray-400">You can chose more than one varient </p>
                     <select multiple required name="slangs[]" id="slangs" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                         @foreach (\App\Models\Slang::all() as $slang)
                             <option
@@ -144,7 +145,7 @@
 
                 <label for="type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select the type of the word</label>
                 <select id="type" name="type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option selected disabled>Select the type of the word</option>
+                    {{-- <option selected disabled>Select the type of the word</option> --}}
 
                     @foreach(\App\Enums\WordEnum::getKeys() as $key)
                         <option value="{{ $key }}">{{ \App\Enums\WordEnum::from($key)->label }}</option>

@@ -46,6 +46,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect(RouteServiceProvider::HOME)->with("success", "Welcome $user->username in Awelle comunity we hope you enjoy your presence with us.");
     }
 }

@@ -1,16 +1,13 @@
-
-
-
 <nav class="bg-white border-gray-200 dark:bg-gray-900 shadow-lg">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
         <a href="{{ route('home') }}">
-            <x-application-logo class="block w-20 h-20 w-auto fill-current " />
+            <x-application-logo class="block w-10 h-20 w-auto fill-current " />
         </a>
     <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
 
 @auth
 
-        <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+        <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 m-4" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
           <span class="sr-only">Open user menu</span>
           <img class="w-10 h-10 rounded-full" src="{{Auth::user()->gravatar}}" alt="user photo">
         </button>

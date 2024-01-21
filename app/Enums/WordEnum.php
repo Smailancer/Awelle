@@ -17,7 +17,7 @@ use Spatie\Enum\Laravel\Enum;
  * @method static self TIME_EXPRESSION()
  * @method static self PLACE_EXPRESSION()
  * @method static self COMMON_ADVERB()
- * @method static self ANIMAL_NATURE()
+ * @method static self NATURE_ANIMAL()
  * @method static self FOOD_DRINK()
  * @method static self BODY_PART()
  * @method static self TOOLS_OBJECTS()
@@ -27,8 +27,8 @@ use Spatie\Enum\Laravel\Enum;
 final class WordEnum extends Enum
 {
     const MAP_VALUE_TO_LABEL = [
-        'VERB' => 'Verbs',
         'NOUN' => 'Nouns',
+        'VERB' => 'Verbs',
         'ADJECTIVE' => 'Adjectives',
         'NUMBER' => 'Numbers',
         'PRONOUN' => 'Pronouns',
@@ -40,7 +40,7 @@ final class WordEnum extends Enum
         'TIME_EXPRESSION' => 'Time Expressions',
         'PLACE_EXPRESSION' => 'Place Expressions',
         'COMMON_ADVERB' => 'Common Adverbs',
-        'ANIMAL_NATURE' => 'Animals and Nature',
+        'NATURE_ANIMAL' => 'Nature and Animals',
         'FOOD_DRINK' => 'Food and Drinks',
         'BODY_PART' => 'Body Parts',
         'TOOLS_OBJECTS' => 'Common Tools and Objects',

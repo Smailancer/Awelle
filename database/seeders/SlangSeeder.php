@@ -15,11 +15,11 @@ class SlangSeeder extends Seeder
     public function run(): void
     {
         $slangsData = [
-            // [
-            //     'name' => 'Darja',
-            //     'ar_name' => 'الدارجة',
-            //     'description' => 'Description for Darja slang.',
-            // ],
+            [
+                'name' => 'Darja',
+                'ar_name' => 'الدارجة',
+                'description' => 'Description for Darja slang.',
+            ],
             [
                 'name' => 'Kabyle',
                 'ar_name' => 'القبائلية',
@@ -49,6 +49,11 @@ class SlangSeeder extends Seeder
                 'name' => 'Targui',
                 'ar_name' => 'الطارقية',
                 'description' => 'Description for Targui slang.',
+            ],
+            [
+                'name' => 'Zenati',
+                'ar_name' => 'الزناتية',
+                'description' => 'Description for Zenati slang.',
             ],
         ];
 
