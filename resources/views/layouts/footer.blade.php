@@ -15,19 +15,19 @@
 
             <ul class="flex flex-wrap items-center mb-6 sm:text-center text-sm font-medium text-gray-500 sm:mb-0  dark:text-gray-400">
                 <li>
-                    <a href="About" class="mr-4 hover:underline md:mr-6 ">About</a>
+                    <a href="About" class="mr-4 hover:underline md:mr-6 ">{{ __('messages.About') }}</a>
                 </li>
                 <li>
-                    <a href="Tamlab" class="mr-4 hover:underline md:mr-6">Tamazight Lab</a>
+                    <a href="Tamlab" class="mr-4 hover:underline md:mr-6">{{ __('messages.Tamazight Lab') }}</a>
                 </li>
                 <li>
-                    <a href="Procourt" class="mr-4 hover:underline md:mr-6 ">Proverb court</a>
+                    <a href="Procourt" class="mr-4 hover:underline md:mr-6 ">{{ __('messages.Proverbs Court') }}</a>
                 </li>
                 <li>
-                    <a href="Academy" class="mr-4 hover:underline md:mr-6 ">Academy</a>
+                    <a href="Academy" class="mr-4 hover:underline md:mr-6 ">{{ __('messages.Academy') }}</a>
                 </li>
                 <li>
-                    <a href="Contact" class="hover:underline">Contact</a>
+                    <a href="Contact" class="hover:underline">{{ __('messages.Contact') }}</a>
                 </li>
             </ul>
         </div>

@@ -5,6 +5,7 @@ use App\Http\Controllers\WordController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\AdminWordController;
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +63,9 @@ Route::post('words/{word}/storeCorrectionSuggestion', [WordController::class, 's
 Route::get('words/{word:spell}', [WordController::class, 'show'])->name('words.show');
 
 Route::resource('words/{word:spell}/comments', CommentController::class)->only(['store', 'update']);
+
+Route::post( '/language-switch', [LanguageController::class, 'languageSwitch'] )->name('language.switch');
+
 
 // Admin Section
 
