@@ -6,9 +6,9 @@
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
             </a> --}}
 
-            <div>
+            <div class="py-5">
                 <a href="{{ route('home') }}">
-                    <x-application-logo class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white w-auto fill-current flex items-center sm:mb-0" />
+                    <img src="/images/logo.png" alt="Awelle Logo" width="100" height="100">
                 </a>
             </div>
 

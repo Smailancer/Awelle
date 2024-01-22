@@ -18,7 +18,7 @@
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
                 <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                    <img src="/images/logo.png" alt="Awelle Logo" width="250" height="100">
                 </a>
                 {{-- <a href="/">
                     <img src="/images/logo.png" alt="Awelle Logo" width="300" height="50">

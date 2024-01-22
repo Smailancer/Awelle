@@ -12,7 +12,7 @@
                 Tutorial
             </a> --}}
             <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-4">Vision</h1>
-            <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-8">Documenting <span class="underline underline-offset-3 decoration-4 decoration-amber-400 dark:decoration-blue-600"> and developing the vocabulary elements </span>of tangible and intangible heritage, starting from the dialects of each society, to nature, food and the names of its ingredients, to clothing, holiday traditions, daily life habits, commonly used tools, and artistic production ...</p> </p>
+            <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-8">Documenting <span class="underline underline-offset-3 decoration-4 decoration-amber-400 dark:decoration-blue-600"> and developing the North African vocabulary elements </span>of tangible and intangible heritage, starting from the dialects of each society, to nature, food and the names of its ingredients, to clothing, holiday traditions, daily life habits, commonly used tools, and artistic production ...</p> </p>
 
 
             {{-- <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-4">Development</h1>

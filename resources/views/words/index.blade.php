@@ -7,7 +7,7 @@
 
             {{ $words->links() }}
         @else
-            <p class="text-center">The term doesnt exist yet, You can add it in case you know it .</p>
+            <p class="text-center">No words yet, You can start adding new terms .</p>
         @endif
     </main>
 </x-app-layout>

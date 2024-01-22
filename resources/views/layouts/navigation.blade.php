@@ -1,7 +1,7 @@
 <nav class="bg-white border-gray-200 dark:bg-gray-900 shadow-lg">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
         <a href="{{ route('home') }}">
-            <x-application-logo class="block w-10 h-20 w-auto fill-current " />
+            <img src="/images/logo.png" alt="Awelle Logo" width="100" height="100">
         </a>
     <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
 
