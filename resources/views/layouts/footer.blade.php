@@ -18,7 +18,7 @@
                     <a href="About" class="mr-4 hover:underline md:mr-6 ">{{ __('messages.About') }}</a>
                 </li>
                 <li>
-                    <a href="Tamlab" class="mr-4 hover:underline md:mr-6">{{ __('messages.Tamazight Lab') }}</a>
+                    <a href="Langlab" class="mr-4 hover:underline md:mr-6">{{ __('messages.Lang Lab') }}</a>
                 </li>
                 <li>
                     <a href="Procourt" class="mr-4 hover:underline md:mr-6 ">{{ __('messages.Proverbs Court') }}</a>

@@ -5,7 +5,7 @@ return [
     'Login' => 'Connexion',
     'Register' => 'S\'inscrire',
     'About' => 'À propos',
-    'Tamazight Lab' => 'Laboratoire Tamazight',
+    'Lang Lab' => 'Lang Lab',
     'Proverbs Court' => 'Cour des proverbes',
     'Academy' => 'Académie',
     'Words Cloud' => 'Nuage de mots',
@@ -19,4 +19,14 @@ return [
     'Add a word' => 'Ajouter un mot',
     'Log Out' => 'Se déconnecter',
     'Prononciation' => 'Prononciation',
+
+    // Login page
+
+    'Email' => 'Email',
+    'Password' => 'Mot de pass',
+    'Remember me' => 'Remember Me',
+    'Forgot your password?' => 'Forgot your password?',
+    "Don't have an account ? Sign up" => "Don't have an account ? Sign up",
+
+
 ];

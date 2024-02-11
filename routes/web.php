@@ -48,7 +48,7 @@ Route::get('/Contact', [ContactController::class, 'show'])->name('contact.show')
 Route::post('/Contact', [ContactController::class, 'submit'])->name('contact.submit');
 
 
-Route::get('/Tamlab', [WordController::class, 'lab'])->name('TamLab');
+Route::get('/Langlab', [WordController::class, 'lab'])->name('LangLab');
 Route::get('/Procourt', [WordController::class, 'court'])->name('Procourt');
 Route::get('/Academy', [WordController::class, 'academy'])->name('Academy');
 Route::get('/About', [WordController::class, 'about'])->name('About');

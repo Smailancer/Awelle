@@ -6,7 +6,7 @@ return [
     'Login' => 'تسجيل الدخول',
     'Register' => 'التسجيل',
     'About' => 'حول',
-    'Tamazight Lab' => 'مختبر الأمازيغية',
+    'Lang Lab' => 'مختبر الكلمات',
     'Proverbs Court' => 'محكمة الأمثال',
     'Academy' => 'الأكاديمية',
     'Words Cloud' => 'سحابة الكلمات',
@@ -21,6 +21,13 @@ return [
     'Log Out' => 'تسجيل الخروج',
 
     'Prononciation' => 'النطق',
+    // Login page
+
+    'Email' => 'البريد الالكتروني',
+    'Password' => 'كلمة المرور',
+    'Remember me' => 'تذكرني',
+    'Forgot your password?' => 'نسيت كلمة المرور ؟',
+    "Don't have an account ? Sign up" => 'لا تملك حساب ؟ قم بإنشاء حساب جديد',
 
 
 
