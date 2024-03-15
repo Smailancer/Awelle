@@ -3,10 +3,10 @@
     <x-setting heading="Correction Suggestion">
 
         <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 ">
                 <!-- Original Term Column -->
-                <div class="bg-white p-6 border border-gray-200 rounded-lg shadow">
-                    <h3 class="text-xl font-bold dark:text-whit mb-8">Original Word</h3>
+                <div class="bg-white p-6 border border-gray-200 rounded-lg shadow transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
+                    <h3 class="text-xl font-bold dark:text-whit mb-8 text-center">Original Word</h3>
                     <div class="justify-between mb-6">
                         <div class="space-x-2">
                             @foreach($word->slang as $slang)
@@ -16,15 +16,16 @@
                     </div>
 
 
-                    <h2 class="text-2xl font-bold text-gray-900 mb-4">{{ $word->term }}</h2>
-                    <p class="text-gray-700 mb-4">spell:  {{ $word->spell }}</p>
-                    <p class="text-gray-700 mb-4">tifinagh : {{ $word->tifinagh }}</p>
-                    <p class="text-gray-700 mb-4">ar_m:  {{ $word->ar_meaning }}</p>
-                    <p class="text-gray-700 mb-4">fr_m: {{ $word->fr_meaning }}</p>
-                    <p class="text-gray-700 mb-4">en_m: {{ $word->en_meaning }}</p>
-                    <p class="text-gray-700 mb-4">type : {{ $word->type }}</p>
-                    <p class="text-gray-700 mb-4">uses :{{ $word->uses }}</p>
-                    <p class="text-gray-700 mb-4">example :{{ $word->example }}</p>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4 text-center">{{ $word->term }}</h2>
+                    <p class="text-gray-700 mb-4"><strong>Spell:</strong>  {{ $word->spell }}</p>
+                    <p class="text-gray-700 mb-4"><strong>Tifinagh :</strong>  {{ $word->tifinagh }}</p>
+                    <p class="text-gray-700 mb-4"><strong>Arabic :</strong> {{ $word->ar_meaning }}</p>
+                    <p class="text-gray-700 mb-4"><strong>French :</strong> {{ $word->fr_meaning }}</p>
+                    <p class="text-gray-700 mb-4"><strong>English :</strong> {{ $word->en_meaning }}</p>
+                    <p class="text-gray-700 mb-4"><strong>Type :</strong> {{ $word->type }}</p>
+                    <p class="text-gray-700 mb-4"><strong>Uses :</strong>{{ $word->uses }}</p>
+                    <p class="text-gray-700 mb-4"><strong>Example :</strong>{{ $word->example }}</p>
+                    <p class="text-gray-700 mb-4"><strong>Username :</strong> {{ $word->user->username }}</p>
                     <!-- Add other details you want to display for the original term -->
 
                       <form method="post" action="{{ route('admin.words.processCorrection', $suggestion->id) }}">
@@ -34,10 +35,10 @@
                 </div>
 
                 <!-- Suggested Term Column -->
-                <div class="bg-white p-6 border border-gray-200 rounded-lg shadow">
-                    <h3 class="text-xl font-bold dark:text-whit mb-8">Edit Suggestion</h3>
+                <div class="bg-white p-6 border border-gray-200 rounded-lg shadow transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
+                    <h3 class="text-xl font-bold dark:text-whit mb-8 text-center">Edit Suggestion</h3>
 
-                    <div class="space-x-2 flex flex-wrap mb-6">
+                    <div class="space-x-2 flex flex-wrap mb-6 text-center">
                         @foreach(json_decode($suggestion->slangs) as $slangId)
                             @php
                                 $slang = \App\Models\Slang::find($slangId);
@@ -49,16 +50,16 @@
 
                         @endforeach
                     </div>
-
-                    <h2 class="text-2xl font-bold text-gray-900 mb-4">{{ $suggestion->term }}</h2>
-                     <p class="text-gray-700 mb-4">spell:  {{ $suggestion->spell }}</p>
-                    <p class="text-gray-700 mb-4">tifinagh : {{ $suggestion->tifinagh }}</p>
-                    <p class="text-gray-700 mb-4">ar_m:  {{ $suggestion->ar_meaning }}</p>
-                    <p class="text-gray-700 mb-4">fr_m: {{ $suggestion->fr_meaning }}</p>
-                    <p class="text-gray-700 mb-4">en_m: {{ $suggestion->en_meaning }}</p>
-                    <p class="text-gray-700 mb-4">type : {{ $suggestion->type }}</p>
-                    <p class="text-gray-700 mb-4">uses :{{ $suggestion->uses }}</p>
-                    <p class="text-gray-700 mb-4">example :{{ $suggestion->example }}</p>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4 text-center">{{ $suggestion->term }}</h2>
+                     <p class="text-gray-700 mb-4"><strong>Spell:</strong> {{ $suggestion->spell }}</p>
+                    <p class="text-gray-700 mb-4"><strong>Tifinagh :</strong> {{ $suggestion->tifinagh }}</p>
+                    <p class="text-gray-700 mb-4"><strong>Arabic :</strong>  {{ $suggestion->ar_meaning }}</p>
+                    <p class="text-gray-700 mb-4"><strong>French :</strong> {{ $suggestion->fr_meaning }}</p>
+                    <p class="text-gray-700 mb-4"><strong>English :</strong> {{ $suggestion->en_meaning }}</p>
+                    <p class="text-gray-700 mb-4"><strong>Type :</strong> {{ $suggestion->type }}</p>
+                    <p class="text-gray-700 mb-4"><strong>Uses :</strong>{{ $suggestion->uses }}</p>
+                    <p class="text-gray-700 mb-4"><strong>Example :</strong>{{ $suggestion->example }}</p>
+                    <p class="text-gray-700 mb-4"><strong>Username :</strong> {{ $suggestion->user->username }}</p>
                     <!-- Add other details you want to display for the suggested term -->
                       <form method="post" action="{{ route('admin.words.processCorrection', $suggestion->id) }}">
                         @csrf

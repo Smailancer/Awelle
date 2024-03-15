@@ -106,7 +106,6 @@ public function processCorrection(CorrectionSuggestion $suggestion)
     $originalWord = Word::findOrFail($suggestion->word_id);
 
     if ($action === 'approve') {
-
         // Update the original word with the suggestion values
         $originalWord->update([
             'term' => $suggestion->term,
@@ -120,15 +119,21 @@ public function processCorrection(CorrectionSuggestion $suggestion)
             'exemple' => $suggestion->exemple,
         ]);
 
+        // Decode the JSON array of slang IDs from the suggestion
+        $slangIds = json_decode($suggestion->slangs, true);
 
-        $originalWord->slang()->sync(request('slangs'));
+        // Use the sync method to update the pivot table with the decoded slang IDs
+        if (is_array($slangIds)) {
+            $originalWord->slang()->sync($slangIds);
+        }
+
         // Update the suggestion status to approved
         $suggestion->status = 'approved';
         $suggestion->save();
 
         return redirect()->route('words.show', $originalWord)->with('success', 'Correction suggestion approved.');
     } elseif ($action === 'decline') {
-        // Perform logic for decline
+        // Logic for decline
         $suggestion->status = 'rejected';
         $suggestion->save();
 

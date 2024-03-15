@@ -6,7 +6,8 @@
         </div>
         <h1 class="text-5xl md:text-7xl text-white font-bold mb-8 z-10">Coming Soon</h1>
         <p class="text-white text-xl md:text-2xl">
-            Prosecuting ancient popular proverbs, documenting the valid ones, and excluding the invalid ones </p>
+            Prosecuting ancient popular proverbs, documenting the valid ones, and excluding the invalid ones
+        </p>
     </div>
 
 </x-app-layout>

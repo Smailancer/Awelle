@@ -38,9 +38,9 @@ class Word extends Model
             )
         );
 
-        $query->when($filters['author'] ?? false, fn($query, $author) =>
-            $query->whereHas('author', fn ($query) =>
-                $query->where('username', $author)
+        $query->when($filters['user'] ?? false, fn($query, $user) =>
+            $query->whereHas('user', fn ($query) =>
+                $query->where('username', $user)
             )
         );
 
@@ -64,9 +64,9 @@ class Word extends Model
         return $this->belongsToMany(Wilaya::class);
     }
 
-    public function author()
+    public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class);
     }
 
     public function correctionSuggestions()

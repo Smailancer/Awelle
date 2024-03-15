@@ -82,7 +82,7 @@
                         <div class="lg:justify-center text-sm mt-6 mb-8">
                             <div class="ml-3 text-left">
                                 <h5 class="font-bold mb-2">
-                                    <a href="/?author={{ $word->author->username }}">{{ $word->author->username }}</a>
+                                    <a href="/?user={{ $word->user->username }}">{{ $word->user->username }}</a>
                                 </h5>
                             </div>
                         </div>

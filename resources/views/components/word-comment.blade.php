@@ -10,8 +10,8 @@
         <div class="flex items-center">
             <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold"><img
                     class="mr-2 w-10 h-10 rounded-full"
-                    src="{{ $comment->author->gravatar }}"
-                    alt="Michael Gough"> <a href="/?author={{ $comment->author->username }}">{{ $comment->author->username }}</a></p>
+                    src="{{ $comment->user->gravatar }}"
+                    alt="Michael Gough"> <a href="/?user={{ $comment->user->username }}">{{ $comment->user->username }}</a></p>
             <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
                     title="February 8th, 2022">{{ $comment->created_at->diffForHumans() }}</time></p>
         </div>
