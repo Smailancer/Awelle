@@ -11,7 +11,7 @@
                 </svg>
                 Tutorial
             </a> --}}
-            <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-4">Vision</h1>
+            <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-4"> {{ __('messages.Vision') }}</h1>
             <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-8">Documenting <span class="underline underline-offset-3 decoration-4 decoration-amber-400 dark:decoration-blue-600"> and developing the North African vocabulary elements </span>of tangible and intangible heritage, starting from the dialects of each society, to nature, food and the names of its ingredients, to clothing, holiday traditions, daily life habits, commonly used tools, and artistic production ...</p> </p>
 
 
@@ -45,9 +45,9 @@
                     <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"/>
                     </svg>
-                    21/01/2024
+                    29/03/2024
                 </a>
-                <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Updates :</h2>
+                <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2"> {{ __('messages.Updates') }} :</h2>
                 <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
 
                     <ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
@@ -76,6 +76,7 @@
                         <li class="line-through decoration-yellow-300">Final modification to layout vs app to solve the small screen issue.</li>
                         <li class="line-through decoration-yellow-300">Activate the contact us form.</li>
                         <li>Night mode.</li>
+                        <li>Most active users</li>
                         <li>Activate the mailing list.</li>
                         <li>Add a filter to display matching words in more than one dialect (Edit in the search list only and make it multi-select).</li>
                    <li>...</li>

@@ -1,6 +1,6 @@
-<div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
+<div class="flex items-center md:order-2 p-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
     <div class="dropdown relative">
-        <button class="dropdown-toggle inline-flex justify-center p-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700" type="button" id="language-dropdown" data-dropdown-toggle="language-dropdown-menu">
+        <button class="dropdown-toggle inline-flex justify-center text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700" type="button" id="language-dropdown" data-dropdown-toggle="language-dropdown-menu">
             <!-- Display flag based on the current application locale -->
             @switch(app()->getLocale())
                 @case('en')
@@ -58,7 +58,7 @@
                         @csrf
                         <input type="hidden" name="language" value="zgh">
                         <button type="submit" class="block w-full px-4 py-2 text-left">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Berber_flag.svg/1200px-Berber_flag.svg.png" class="w-4 h-4 rounded-full mr-2 inline" alt="Tamazight"> Tamazight
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Berber_flag.svg/1200px-Berber_flag.svg.png" class="w-4 h-4 rounded-full mr-2 inline" alt="Tamazight"> ⵜⴰⵎⴰⵣⵉⵖⵜ
                         </button>
                     </form>
                 </li>

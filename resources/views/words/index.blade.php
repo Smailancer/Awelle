@@ -5,7 +5,7 @@
         @if ($words->count())
             <x-words-grid :words="$words" />
 
-            {{ $words->links() }}
+            {{ $words->onEachSide(1) }}
         @else
             <p class="text-center">No words yet, You can start adding new terms .</p>
         @endif
