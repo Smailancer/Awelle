@@ -6,11 +6,12 @@ return [
     'Login' => 'Login',
     'Register' => 'Register',
     'About' => 'About',
+    'Community' => 'Community',
     'Lang Lab' => 'Lang Lab',
     'Proverbs Court' => 'Proverbs Court',
     'Academy' => 'Academy',
     'Words Cloud' => 'Words Cloud',
-    'Contact' => 'Contact',
+    'Contact' => 'Contact Us',
     'Variants' => 'Variants',
     'Search' => 'Search',
 

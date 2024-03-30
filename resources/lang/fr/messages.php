@@ -5,6 +5,7 @@ return [
     'Login' => 'Connexion',
     'Register' => 'S\'inscrire',
     'About' => 'À propos',
+    'Community' => 'Communauté',
     'Lang Lab' => 'Lang Lab',
     'Proverbs Court' => 'Cour des proverbes',
     'Academy' => 'Académie',

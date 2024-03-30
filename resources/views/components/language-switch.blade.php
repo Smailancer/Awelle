@@ -1,22 +1,22 @@
-<div class="flex items-center md:order-2 p-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
+<div class="flex items-center md:order-2 p-2 mt-1 space-x-1 md:space-x-0 rtl:space-x-reverse">
     <div class="dropdown relative">
         <button class="dropdown-toggle inline-flex justify-center text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700" type="button" id="language-dropdown" data-dropdown-toggle="language-dropdown-menu">
             <!-- Display flag based on the current application locale -->
             @switch(app()->getLocale())
                 @case('en')
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" class="w-8 h-8 rounded-full" alt="English">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" class="w-10 h-10 rounded-full" alt="English">
                     @break
                 @case('ar')
-                    <img src="https://qph.cf2.quoracdn.net/main-qimg-f029685579519cea272405dc5795acf3" class="w-8 h-8 rounded-full" alt="العربية">
+                    <img src="https://qph.cf2.quoracdn.net/main-qimg-f029685579519cea272405dc5795acf3" class="w-10 h-10 rounded-full" alt="العربية">
                     @break
                 @case('fr')
-                    <img src="https://e7.pngegg.com/pngimages/443/340/png-clipart-blue-white-and-red-flag-flag-of-france-national-flag-flag-of-the-united-states-helium-blue-flag.png" class="w-8 h-8 rounded-full" alt="Français">
+                    <img src="https://e7.pngegg.com/pngimages/443/340/png-clipart-blue-white-and-red-flag-flag-of-france-national-flag-flag-of-the-united-states-helium-blue-flag.png" class="w-10 h-10 rounded-full" alt="Français">
                     @break
                 @case('zgh')
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Berber_flag.svg/1200px-Berber_flag.svg.png" class="w-8 h-8 rounded-full" alt="Tamazight">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Berber_flag.svg/1200px-Berber_flag.svg.png" class="w-10 h-10 rounded-full" alt="Tamazight">
                     @break
                 @default
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" class="w-8 h-8 rounded-full" alt="English">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" class="w-10 h-10 rounded-full" alt="English">
             @endswitch
         </button>
         <!-- Dropdown menu, forms for POST request with flag images -->

@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Custom CSS for background images */
+.bg-product-1 { background-image: url('https://imageio.forbes.com/specials-images/imageserve/459295784/960x0.jpg'); }
+.bg-product-2 { background-image: url('https://4.bp.blogspot.com/-aVfTgKySlOs/WBhq72SI23I/AAAAAAAALuw/mF48e3fZ1k4wNYvNovQpHdeD_6UqsVhaQCPcBGAYYCw/s1600/Arzima%2B1%255B1%255D.jpg'); }
+.bg-product-3 { background-image: url('https://www.diwanalarabia.com/ImagesAndFiles/Upload/Images/424.jpg'); }
+
+/* Ensure background cover and center alignment */
+.product-section {
+    background-size: cover;
+    background-position: center;
+    /* Tailwind classes can also be used for these properties */
+  }
+
+  /* Specific transition for flex-grow */
+  .product-section {
+    transition: flex-grow 0.3s ease;
+  }
+
+  .product-section:hover {
+    flex-grow: 5;
+  }

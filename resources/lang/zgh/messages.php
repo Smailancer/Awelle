@@ -5,6 +5,7 @@ return [
     'Login' => 'ⵏⵏⵉⴼ',
     'Register' => 'ⵔⵉⵊⵉⵚⵜⵔⴰ',
     'About' => 'ⵉⵎⴰⵍ',
+    'Community' => 'ⴰⴳⴳⴰⵣⵉⵖⴰ',
     'Lang Lab' => 'ⵜⴰⵎⵓⵔⵜ ⵏ ⵜⵓⵜⵍⴰⵢⵜ',
     'Proverbs Court' => 'ⵜⴰⴼⵔⴰⵖⵜ ⵏ ⵜⴰⵎⴰⵢⵜ',
     'Academy' => 'ⴰⵇⴰⴷⵉⵎⵢⴰ',
