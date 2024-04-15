@@ -35,7 +35,7 @@
                 <span class="sr-only">Facebook page</span>
             </a>
             <a href="https://instagram.com/awelle_net/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ml-5">
-                <i class="fa-brands fa-instagram fa-lg"></i>
+                <i class="fa-brands fa-square-instagram fa-lg"></i>
                 <span class="sr-only">Instagram</span>
             </a>
             <a href="https://twitter.com/Awelle_Net" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ml-5">
@@ -45,6 +45,10 @@
             <a href="https://t.me/Awelle_Net" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ml-5">
                 <i class="fa-brands fa-telegram fa-lg"></i>
                 <span class="sr-only">Telegram</span>
+            </a>
+            <a href="https://www.tiktok.com/@awelle.net" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ml-5">
+                <i class="fa-brands fa-tiktok fa-lg"></i>
+                <span class="sr-only">TikTok</span>
             </a>
         </div>
     </div>

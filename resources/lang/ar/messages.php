@@ -13,6 +13,8 @@ return [
     'Contact' => 'اتصل بنا',
     'Variants' => 'المتغيرات',
     'Search' => 'ابحث',
+    'Note' => 'من الان وصاعدا سيتم اعتماد الرابط <a href="https://awale.net" class="font-semibold underline hover:no-underline">Awale.net</a> بدلا من <span class="text-amber-500 font-semibold"> Awelle.net </span> والذي سيتم تجاوزه. ',
+
     // Footer
     'Profile' => 'الملف الشخصي',
     'Admin Panel' => 'لوحة التحكم',

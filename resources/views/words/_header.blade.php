@@ -6,7 +6,7 @@
 
 
 
-    <h1 class="mb-4 text-6xl font-extrabold text-yellow-300 dark:text-white md:text-6xl lg:text-8xl"> AWELLE </h1>
+    <h1 class="mb-4 text-6xl font-extrabold text-yellow-300 dark:text-white md:text-6xl lg:text-8xl"> AWALE </h1>
     <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">{{ __('messages.header') }}</p>
 
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-4">

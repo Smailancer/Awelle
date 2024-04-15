@@ -14,6 +14,7 @@ return [
     'Contact' => 'Contact Us',
     'Variants' => 'Variants',
     'Search' => 'Search',
+    'Note' => 'From now on the new link to the website will be <a href="https://awale.net" class="font-semibold underline hover:no-underline">Awale.net</a> instead of <span class="text-amber-500 font-semibold"> Awelle.net </span> which will be deprecated. ',
 
 // Footer
 

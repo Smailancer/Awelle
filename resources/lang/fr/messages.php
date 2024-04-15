@@ -13,6 +13,8 @@ return [
     'Contact' => 'Contact',
     'Variants' => 'Variantes',
     'Search' => 'Rechercher',
+    'Note' => 'À partir de maintenant, le nouveau lien vers le site Web sera <a href="https://awale.net" class="font-semibold underline hover:no-underline">Awale.net</a> au lieu de <span class="text-amber-500 font-semibold">Awelle.net</span> qui sera obsolète.',
+
     // Footer
     'Profile' => 'Profil',
     'Admin Panel' => 'Panneau d\'administration',
