@@ -30,23 +30,23 @@
         </span>
 
         <div class="flex justify-center mt-4 my-5">
-            <a href="https://facebook.com/www.awelle.net" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+            <a href="https://www.facebook.com/awale.net" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                 <i class="fa-brands fa-facebook fa-lg"></i>
                 <span class="sr-only">Facebook page</span>
             </a>
-            <a href="https://instagram.com/awelle_net/" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ml-5">
+            <a href="https://www.instagram.com/awale_net" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ml-5">
                 <i class="fa-brands fa-square-instagram fa-lg"></i>
                 <span class="sr-only">Instagram</span>
             </a>
-            <a href="https://twitter.com/Awelle_Net" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ml-5">
+            <a href="https://twitter.com/Awale_Net" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ml-5">
                 <i class="fa-brands fa-twitter fa-lg"></i>
                 <span class="sr-only">Twitter</span>
             </a>
-            <a href="https://t.me/Awelle_Net" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ml-5">
+            <a href="https://t.me/Awale_Net" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ml-5">
                 <i class="fa-brands fa-telegram fa-lg"></i>
                 <span class="sr-only">Telegram</span>
             </a>
-            <a href="https://www.tiktok.com/@awelle.net" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ml-5">
+            <a href="https://www.tiktok.com/@awale.net" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ml-5">
                 <i class="fa-brands fa-tiktok fa-lg"></i>
                 <span class="sr-only">TikTok</span>
             </a>
