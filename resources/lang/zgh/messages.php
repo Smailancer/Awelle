@@ -38,7 +38,7 @@ return [
 
     // Page de contact
     'Contact Us' => 'ⴰⵙⵙ ⵏⴰ',
-    'Issue' => 'ⴰⴳ ⵢⵢⴰⵡⴰⵍ ⵏ ⵜⴰⴷⴷⴰⵔⵙ ⵜⴰⵙⵎⵓⵔⵜ ⴰⴳ ⵢⵉⴼⵓⴷⴰⵏ ⴰⴳⵍⴷⴷⵓⵏ ⴰⵏⵍⴰⴽⴽⵓⵙ ⵜⵉⵎⴰⵔⵙⴰ ⵢⵓⵏⴷⵉⵜ.',
+    'Issue' => 'Ideas, suggestions and criticism are welcome.',
     'Your email' => 'ⵉⵎⵎⴰⵍ ⵏ ⵜⵉⵜⵉ',
     'Subject' => 'ⴰⴳⴳⴰⴷⴰ',
     'Your message' => 'ⵜⵉⵎⴰⵔⵙⵜ ⵜⵓⵎⵎⴰⵍⵉ',

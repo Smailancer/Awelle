@@ -40,8 +40,9 @@ return [
 
     // contct page
     'Contact Us' => 'Contact Us',
-    'Issue' => 'Got a technical issue? Want to send feedback about a beta version of the dictionary? Let us know.',
+    'Issue' => 'Ideas, suggestions and criticism are welcome.',
     'Your email' => 'Your email',
+    'email' => 'Your email (Just to respond to your message if we receive it)',
     'Subject' => 'Subject',
     'Your message' => 'Your message',
     'Send message' => 'Send message',

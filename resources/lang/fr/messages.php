@@ -38,8 +38,9 @@ return [
 
     // Page de contact
     'Contact Us' => 'Contactez-nous',
-    'Issue' => 'Vous rencontrez un problème technique ? Vous voulez envoyer des commentaires sur une version bêta du dictionnaire ? Faites-le nous savoir.',
+    'Issue' => 'Les idées, suggestions et critiques sont les bienvenues.',
     'Your email' => 'Votre e-mail',
+    'email' => 'Votre email (Juste pour répondre à votre message si nous le recevons)',
     'Subject' => 'Sujet',
     'Your message' => 'Votre message',
     'Send message' => 'Envoyer le message',
