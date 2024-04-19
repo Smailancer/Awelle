@@ -26,7 +26,7 @@
         <span class="block text-sm text-center text-gray-500 dark:text-gray-400">
             Made in <span class="text-green-500">🌍</span> with <i class="fa-solid fa-heart fa-beat" style="color: #f40b0b;"></i> © 2024
             <a href="/" class="hover:underline">Awelle™</a>.
-            <p>Contact us at &#128231; : <a href="mailto:salam@awelle.net" class="hover:underline">salam@awelle.net</a></p>
+            <p>Contact us at &#128231; : <a href="mailto:salam@awale.net" class="hover:underline">salam@awale.net</a></p>
         </span>
 
         <div class="flex justify-center mt-4 my-5">
