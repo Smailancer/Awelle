@@ -20,6 +20,8 @@ class ContactController extends Controller
             'subject' => 'required|string',
             'email' => 'required|email',
             'message' => 'required|string',
+            'g-recaptcha-response' => 'required|captcha',
+
         ]);
 
         // Send an email with the form data
