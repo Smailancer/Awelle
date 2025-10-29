@@ -83,6 +83,9 @@ class CommentController extends Controller
          // Retrieve the comment from the database
          $comment = Comment::findOrFail($commentId);
 
+         // Authorize the deletion
+         $this->authorize('delete', $comment);
+
          // Get the associated word
          $word = $comment->word;
 
