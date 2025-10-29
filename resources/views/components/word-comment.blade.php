@@ -16,9 +16,7 @@
                     title="February 8th, 2022">{{ $comment->created_at->diffForHumans() }}</time></p>
         </div>
 
-@auth
-
-
+@can('delete', $comment)
         <button id="dropdownComment1Button-{{ $comment->id }}" data-dropdown-toggle="dropdownComment1-{{ $comment->id }}"
             class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 dark:text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             type="button">
@@ -59,7 +57,7 @@
                 </li>
             </ul>
         </div>
-        @endauth
+@endcan
     </footer>
     <p class="text-gray-500 dark:text-gray-400 ml-10">{{ $comment->body }}</p>
 </article>

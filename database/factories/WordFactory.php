@@ -26,10 +26,11 @@ class WordFactory extends Factory
      */
     public function definition()
     {
+        $term = $this->faker->sentence();
         return [
             'user_id' => User::factory(),
-            // 'slang_id' => Slang::factory(),
-            'term' => $this->faker->sentence(),
+            'term' => $term,
+            'standard' => $term,
             'spell' => $this->faker->slug(),
             'tifinagh' => $this->faker->slug(),
             'exemple' =>  $this->faker->paragraph(3),
