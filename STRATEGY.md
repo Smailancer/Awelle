@@ -17,10 +17,12 @@ The database is being structured to handle the complex linguistic landscape of N
     *   Mapping linguistic data to specific countries (Algeria, Morocco, Tunisia, Libya, Mauritania).
 3.  **Variant/Slang Layer**:
     *   Specific dialects (e.g., Kabyle, Chaoui, Chleuh, Zenati).
-    *   **Cross-Border Differentiation**: The architecture explicitly recognizes that the same slang name (e.g., **Chleuh**) may exist in different countries (Algeria and Morocco) but contains distinct vocabulary, pronunciation, and usage.
+4.  **Cross-Regional Commonalities**:
+    *   **Shared Vocabulary**: The architecture specifically allows a single word to be linked to **multiple variants and countries**. This design choice is crucial for highlighting common linguistic roots and shared vocabulary across the entire North African region.
+    *   **Cross-Border Differentiation**: Simultaneously, the system recognizes that some words are unique to specific versions of a slang (e.g., Chleuh in Algeria vs. Morocco), allowing for high-fidelity data collection.
 
 ### 👥 Target Audience
-*   **Native Speakers**: Contributing and validating their local vernacular.
+*   **Native Speakers**: Contributing and validating their local vernacular and discovering shared words with other regions.
 *   **Language Learners & Diaspora**: Reconnecting with their roots.
 *   **Developers/Researchers**: Utilizing the dataset for the Siwel LLM and other linguistic AI applications.
 
@@ -31,7 +33,7 @@ The database is being structured to handle the complex linguistic landscape of N
 To address current pain points (lack of contributors, accuracy verification, low visibility) and move towards the Siwel LLM vision, the following enhancements are suggested:
 
 ### A. Refined Data Architecture & LLM Readiness
-*   **Three-Tier Slang Management**: Refactor the database to support the `Pillar -> Country -> Slang` relationship. This ensures that "Chleuh (Algeria)" and "Chleuh (Morocco)" can be treated as related but distinct datasets.
+*   **Three-Tier Slang Management**: Refactor the database to support the `Pillar -> Country -> Slang` relationship while maintaining the "many-to-many" link between words and slangs.
 *   **Rich Training Data for Siwel**: Expand the `words` schema to include:
     *   **Contextual Sentences**: Multiple examples of the word in daily conversation.
     *   **Audio Snippets**: User-contributed recordings for future Speech-to-Text (STT) capabilities.
